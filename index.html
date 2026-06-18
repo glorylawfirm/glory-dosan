@@ -216,6 +216,16 @@ body{margin:0;padding:0;}
   justify-content:center;
   gap:0.6cqw;
 }
+/* 전화 연결 링크 */
+#glory-rehab-hero a.grh-contact-col{
+  text-decoration:none;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:opacity .2s ease;
+}
+#glory-rehab-hero a.grh-contact-col:active{
+  opacity:0.65;
+}
 #glory-rehab-hero .grh-contact-label{
   font-size:3cqw;
   font-weight:800;
@@ -346,7 +356,7 @@ body{margin:0;padding:0;}
       </div>
       <div class="grh-toptag" data-grh-anim="right">개인회생전문 법무법인</div>
     </div>
-
+<br><br>
     <!-- ===== 헤드라인 ===== -->
     <div class="grh-headline">
       <h2 data-grh-anim="up">개인회생 <span class="grh-gold">변호사 수임료</span> 걱정하지 마세요</h2>
@@ -373,15 +383,15 @@ body{margin:0;padding:0;}
 
     <!-- ===== 연락처 바 ===== -->
     <div class="grh-contact" data-grh-anim="up">
-      <div class="grh-contact-col">
+      <a class="grh-contact-col" href="tel:1544-0904">
         <div class="grh-contact-label">전화상담</div>
         <div class="grh-contact-num">1544-0904</div>
-      </div>
+      </a>
       <div class="grh-divider"></div>
-      <div class="grh-contact-col">
+      <a class="grh-contact-col" href="tel:010-8182-0478">
         <div class="grh-contact-label">긴급상담</div>
         <div class="grh-contact-num">010-8182-0478</div>
-      </div>
+      </a>
     </div>
 
     <!-- ===== 하단 안내 박스 ===== -->
@@ -921,7 +931,7 @@ body{margin:0;padding:0;}
     #glory-case-slider .gcs-stamp{
       position:relative;
       flex:0 0 auto;
-      width:21cqw;
+      width:31cqw;
       aspect-ratio:1 / 1;
       display:flex;
       align-items:center;
