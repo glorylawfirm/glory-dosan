@@ -1549,22 +1549,25 @@ body{margin:0;padding:0;}
       box-shadow:0 1.5cqw 4cqw rgba(0,0,0,.18);
     }
 
-    #glory-rehab-expert-section .gre-naver-card{
+    #glory-rehab-expert-section .gre-yt-card{
       position:relative;
       aspect-ratio:9 / 16;
       align-self:flex-start;
       background:#000;
     }
 
-    #glory-rehab-expert-section .gre-naver-frame{
+    #glory-rehab-expert-section .gre-yt-frame{
       position:relative;
       width:100%;
       height:100%;
       overflow:hidden;
       background:#000;
+      -webkit-user-select:none;
+      user-select:none;
+      -webkit-touch-callout:none;
     }
 
-    #glory-rehab-expert-section .gre-naver-frame iframe{
+    #glory-rehab-expert-section .gre-yt-frame iframe{
       position:absolute;
       inset:0;
       width:100%;
@@ -1572,6 +1575,93 @@ body{margin:0;padding:0;}
       border:0;
       display:block;
       background:#000;
+      pointer-events:none;
+      -webkit-user-select:none;
+      user-select:none;
+      opacity:0;
+      transition:opacity .45s ease;
+    }
+
+    #glory-rehab-expert-section .gre-yt-frame.gre-yt-playing iframe{
+      opacity:1;
+    }
+
+    #glory-rehab-expert-section .gre-yt-block{
+      position:absolute;
+      inset:0;
+      z-index:4;
+      background:transparent;
+      pointer-events:auto;
+      cursor:default;
+      -webkit-user-select:none;
+      user-select:none;
+      -webkit-user-drag:none;
+    }
+
+    #glory-rehab-expert-section .gre-yt-controls{
+      position:absolute;
+      top:2.4cqw;
+      left:2.4cqw;
+      z-index:5;
+      display:flex;
+      gap:1.4cqw;
+    }
+
+    #glory-rehab-expert-section .gre-yt-ctrl{
+      width:6cqw;
+      height:6cqw;
+      min-width:34px;
+      min-height:34px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:0;
+      border:0;
+      border-radius:50%;
+      background:rgba(18,18,18,.55);
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+      -webkit-backdrop-filter:blur(2px);
+      backdrop-filter:blur(2px);
+      transition:background .2s ease, transform .15s ease;
+    }
+
+    #glory-rehab-expert-section .gre-yt-ctrl:hover{
+      background:rgba(18,18,18,.74);
+    }
+
+    #glory-rehab-expert-section .gre-yt-ctrl:active{
+      transform:scale(.92);
+    }
+
+    #glory-rehab-expert-section .gre-yt-ctrl svg{
+      width:3.1cqw;
+      height:3.1cqw;
+      min-width:14px;
+      min-height:14px;
+      flex:0 0 auto;
+      display:block;
+    }
+
+    #glory-rehab-expert-section .gre-yt-sound svg{
+      fill:var(--gre-gold);
+    }
+
+    /* 소리 켜기/끄기 아이콘 토글 */
+    #glory-rehab-expert-section .gre-yt-sound .gre-ic-on{
+      display:none;
+    }
+
+    #glory-rehab-expert-section .gre-yt-sound .gre-ic-muted{
+      display:block;
+    }
+
+    #glory-rehab-expert-section .gre-yt-sound:not(.is-muted) .gre-ic-on{
+      display:block;
+    }
+
+    #glory-rehab-expert-section .gre-yt-sound:not(.is-muted) .gre-ic-muted{
+      display:none;
     }
 
     #glory-rehab-expert-section .gre-right{
@@ -1778,20 +1868,33 @@ body{margin:0;padding:0;}
   </div>
 
   <div class="gre-body">
-    <div class="gre-card gre-naver-card gre-reveal gre-left" style="--d:.25s">
-      <div class="gre-naver-frame">
+    <div class="gre-card gre-yt-card gre-reveal gre-left" style="--d:.25s">
+      <div class="gre-yt-frame">
         <iframe
-          class="gre-naver-iframe"
+          class="gre-yt-iframe"
           width="393"
           height="699"
-          title="NAVER Clip"
+          title="YouTube Shorts"
           src="about:blank"
-          data-src="https://m.naver.com//shorts/?serviceType=NTV&mediaId=DCE053EA6AF904CF357ABBC72B7A66561CB9&recType=AiRS&panelType=sdk_ntv&entryPoint=https%3A%2F%2Ftv.naver.com&adUnitId=ntv_shortformviewer_web&viewerInfo=ntv_shortformviewer_web&embed=true&sdkTargetId=PLAYER-SDK-715943-316445&theme=light&viewMode=pc&oembed=true"
+          data-video-id="oHGP4IRyCpI"
           frameborder="0"
           loading="eager"
           allow="autoplay; fullscreen; encrypted-media; clipboard-write; web-share; picture-in-picture"
           allowfullscreen>
         </iframe>
+
+        <div class="gre-yt-block" aria-hidden="true"></div>
+
+        <div class="gre-yt-controls">
+          <button type="button" class="gre-yt-ctrl gre-yt-sound is-muted" aria-label="소리 켜기">
+            <svg class="gre-ic gre-ic-muted" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.25-3.9v2.07l2.2 2.2c.03-.12.05-.25.05-.37zm2.5 0c0 .94-.2 1.83-.54 2.64l1.51 1.51A8.94 8.94 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 0 0 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3z"/>
+            </svg>
+            <svg class="gre-ic gre-ic-on" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.25-3.9v7.79A4.5 4.5 0 0 0 16.5 12zM14 3.23v2.06a7.001 7.001 0 0 1 0 13.42v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -1845,78 +1948,188 @@ body{margin:0;padding:0;}
       root.classList.add('gre-js');
 
       /*
-        네이버 숏폼 무음 자동재생 최대 시도 설정
-        - 클릭, 터치 없이 페이지 접속 즉시 iframe src 주입
-        - iOS / Android 대응용 muted, playsinline 계열 파라미터 포함
-        - allow="autoplay" 권한 포함
+        유튜브 숏폼 무음 자동재생 (IFrame Player API 사용)
+        - 브라우저 정책상 소리 있는 자동재생은 차단되므로 mute 상태로 시작 (필수)
+        - 재생목록(playlist) 파라미터를 쓰지 않으므로 가운데 이전/다음 버튼이 뜨지 않음
+        - 무한반복은 onStateChange(ENDED) 이벤트에서 처음으로 되감아 직접 처리
+        - controls=0 + 영상 위 투명 차단막으로 일시정지/컨트롤 노출을 막음
+        - iOS / Android 인라인 재생을 위한 playsinline=1
       */
-      var iframe = root.querySelector('.gre-naver-iframe');
+      var iframe = root.querySelector('.gre-yt-iframe');
+      var frame = root.querySelector('.gre-yt-frame');
+      var soundBtn = root.querySelector('.gre-yt-sound');
 
-      function buildNaverAutoplayUrl(){
-        if(!iframe) return '';
+      var videoId = iframe ? (iframe.getAttribute('data-video-id') || '') : '';
+      var ytPlayer = null;
 
-        var baseSrc = iframe.getAttribute('data-src') || iframe.getAttribute('src') || '';
-
-        try{
-          var url = new URL(baseSrc, window.location.href);
-
-          url.searchParams.set('embed', 'true');
-
-          url.searchParams.set('autoplay', '1');
-          url.searchParams.set('autoPlay', '1');
-          url.searchParams.set('autoplayMuted', '1');
-
-          url.searchParams.set('muted', '1');
-          url.searchParams.set('mute', '1');
-          url.searchParams.set('isMuted', '1');
-          url.searchParams.set('volume', '0');
-
-          url.searchParams.set('playsinline', '1');
-          url.searchParams.set('playsInline', '1');
-          url.searchParams.set('webkit-playsinline', '1');
-
-          url.searchParams.set('loop', '1');
-
-          return url.toString();
-        }catch(e){
-          return baseSrc;
-        }
+      function revealVideo(){
+        if(frame) frame.classList.add('gre-yt-playing');
       }
 
-      function startNaverAutoplay(){
-        if(!iframe) return;
+      function buildYoutubeUrl(){
+        if(!videoId) return '';
 
-        var autoplaySrc = buildNaverAutoplayUrl();
+        var origin = '';
+        if(location.protocol === 'http:' || location.protocol === 'https:'){
+          origin = '&origin=' + encodeURIComponent(location.origin);
+        }
 
+        var params = [
+          'autoplay=1',
+          'mute=1',
+          'controls=0',
+          'playsinline=1',
+          'modestbranding=1',
+          'rel=0',
+          'fs=0',
+          'disablekb=1',
+          'iv_load_policy=3',
+          'enablejsapi=1'
+        ].join('&');
+
+        return 'https://www.youtube.com/embed/' + videoId + '?' + params + origin;
+      }
+
+      function resetSoundButton(){
+        if(!soundBtn) return;
+        soundBtn.classList.add('is-muted');
+        soundBtn.setAttribute('aria-label', '소리 켜기');
+      }
+
+      /* iframe src 주입 (API 로드 전에 먼저 설정) */
+      if(iframe && videoId){
+        iframe.id = iframe.id || 'gre-yt-player';
         iframe.setAttribute(
           'allow',
           'autoplay; fullscreen; encrypted-media; clipboard-write; web-share; picture-in-picture'
         );
-
         iframe.setAttribute('loading', 'eager');
+        if(iframe.getAttribute('src') !== buildYoutubeUrl()){
+          iframe.setAttribute('src', buildYoutubeUrl());
+        }
+        resetSoundButton();
+      }
 
-        if(iframe.getAttribute('src') !== autoplaySrc){
-          iframe.setAttribute('src', autoplaySrc);
+      /* ===== YouTube IFrame API 로드 ===== */
+      function loadYouTubeAPI(cb){
+        if(window.YT && window.YT.Player){ cb(); return; }
+
+        window.__greYTCallbacks = window.__greYTCallbacks || [];
+        window.__greYTCallbacks.push(cb);
+
+        var prevReady = window.onYouTubeIframeAPIReady;
+        window.onYouTubeIframeAPIReady = function(){
+          if(typeof prevReady === 'function'){ try{ prevReady(); }catch(e){} }
+          var list = window.__greYTCallbacks || [];
+          window.__greYTCallbacks = [];
+          for(var i=0;i<list.length;i++){ try{ list[i](); }catch(e){} }
+        };
+
+        if(!document.getElementById('gre-yt-api-script')){
+          var s = document.createElement('script');
+          s.id = 'gre-yt-api-script';
+          s.src = 'https://www.youtube.com/iframe_api';
+          (document.head || document.body).appendChild(s);
         }
       }
 
-      /*
-        페이지 접속 즉시 실행
-        DOMContentLoaded를 기다리지 않고, 현재 script 위치에서 바로 실행합니다.
-      */
-      startNaverAutoplay();
+      function initPlayer(){
+        if(!iframe || !videoId || !window.YT || !window.YT.Player) return;
 
-      /*
-        브라우저 뒤로가기 / 캐시 복원 시에도 다시 자동재생 URL 유지
-      */
-      window.addEventListener('pageshow', function(){
-        startNaverAutoplay();
-      });
+        ytPlayer = new YT.Player(iframe, {
+          events: {
+            onReady: function(e){
+              /*
+                화면에 보이지 않아도 페이지 접속 즉시 강제 재생.
+                브라우저는 화면 밖 영상의 'autoplay'를 미루는 경우가 있으므로
+                playVideo()를 즉시·반복 호출해 재생을 강제로 시작시킨다.
+              */
+              try{ e.target.mute(); e.target.playVideo(); }catch(err){}
+
+              var tries = 0;
+              var forceTimer = setInterval(function(){
+                tries++;
+                try{ e.target.mute(); e.target.playVideo(); }catch(err){}
+
+                var st = -1;
+                try{ st = e.target.getPlayerState(); }catch(err){}
+
+                if(st === YT.PlayerState.PLAYING || tries >= 15){
+                  clearInterval(forceTimer);
+                }
+              }, 350);
+
+              /* 이벤트가 누락돼도 일정 시간 뒤 영상이 보이도록 안전장치 */
+              setTimeout(revealVideo, 1500);
+            },
+            onStateChange: function(e){
+              /* 실제 재생이 시작되면 그때 영상을 노출 (로딩 컨트롤 가림) */
+              if(e.data === YT.PlayerState.PLAYING){
+                revealVideo();
+              }
+              /* 영상이 끝나면 처음으로 되감아 무한반복 */
+              if(e.data === YT.PlayerState.ENDED){
+                try{ e.target.seekTo(0, true); e.target.playVideo(); }catch(err){}
+              }
+            }
+          }
+        });
+      }
+
+      if(iframe && videoId){
+        loadYouTubeAPI(initPlayer);
+        /* API가 끝내 로드되지 않아도 영상은 보이도록 (URL autoplay로 재생됨) */
+        setTimeout(revealVideo, 2500);
+      }
+
+      /* postMessage 폴백 (player 객체가 아직 없을 때 대비) */
+      function ytCommand(func, args){
+        if(!iframe || !iframe.contentWindow) return;
+        try{
+          iframe.contentWindow.postMessage(JSON.stringify({
+            event: 'command', func: func, args: args || []
+          }), '*');
+        }catch(e){}
+      }
+
+      /* ===== 소리 켜기 / 끄기 버튼 ===== */
+      if(soundBtn){
+        soundBtn.addEventListener('click', function(){
+          var isMuted = soundBtn.classList.contains('is-muted');
+
+          if(isMuted){
+            if(ytPlayer && ytPlayer.unMute){
+              try{ ytPlayer.unMute(); ytPlayer.setVolume(100); ytPlayer.playVideo(); }catch(e){}
+            }else{
+              ytCommand('unMute'); ytCommand('setVolume', [100]); ytCommand('playVideo');
+            }
+            soundBtn.classList.remove('is-muted');
+            soundBtn.setAttribute('aria-label', '소리 끄기');
+          }else{
+            if(ytPlayer && ytPlayer.mute){
+              try{ ytPlayer.mute(); }catch(e){}
+            }else{
+              ytCommand('mute');
+            }
+            soundBtn.classList.add('is-muted');
+            soundBtn.setAttribute('aria-label', '소리 켜기');
+          }
+        });
+      }
+
+      /* 뒤로가기 / 캐시 복원(bfcache) / 탭 복귀 시 재생 유지 */
+      function resumePlayback(){
+        if(ytPlayer && ytPlayer.playVideo){
+          try{ ytPlayer.playVideo(); }catch(e){}
+        }else{
+          ytCommand('playVideo');
+        }
+      }
+
+      window.addEventListener('pageshow', resumePlayback);
 
       document.addEventListener('visibilitychange', function(){
-        if(document.visibilityState === 'visible'){
-          startNaverAutoplay();
-        }
+        if(document.visibilityState === 'visible'){ resumePlayback(); }
       });
 
       /* ===== 등장 애니메이션 ===== */
