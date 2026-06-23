@@ -1012,28 +1012,53 @@ margin: 4cqw 2cqw 0;
       z-index:1;
     }
 
-    /* ===== HEADLINE ===== */
+    /* ===== HEADLINE : 첨부 이미지 스타일 ===== */
     #glory-case-slider .gcs-headline{
+      position:relative;
+      z-index:1;
+      width:100%;
+      max-width:740px;
+      margin:0 auto 3.2cqw;
+      padding:2.3cqw 1.5cqw;
       text-align:center;
-      margin-bottom:6cqw;
+      border:0.28cqw solid #202020;
+      border-radius:1.15cqw;
+      background:
+        linear-gradient(180deg,#ffffff 0%,#fafafa 56%,#f1f1ef 100%);
+      box-shadow:
+        0 .45cqw .18cqw rgba(0,0,0,.35),
+        inset 0 .18cqw .45cqw rgba(255,255,255,.95),
+        inset 0 -.2cqw .35cqw rgba(0,0,0,.08);
+    }
+
+    #glory-case-slider .gcs-headline .l1,
+    #glory-case-slider .gcs-headline .l2{
+      margin:0;
+      font-family:'GMarketSans-500';
+      font-size:6.3cqw;
+      /* font-weight:900; */
+      letter-spacing:-0.075em;
+      line-height:1.4;
+      word-break:keep-all;
     }
 
     #glory-case-slider .gcs-headline .l1{
-      font-family:'GMarketSans-400';
-      margin:0;
-      font-size:5.4cqw;
-      font-weight:700;
-      color:var(--gcs-ink);
-      letter-spacing:-0.01em;
+      color:#050505;
     }
 
     #glory-case-slider .gcs-headline .l2{
-      font-family:'GMarketSans-800';
-      margin:1cqw 0 0;
-      font-size:7.4cqw;
-      font-weight:800;
-      color:#ecb22b;
-      letter-spacing:-0.01em;
+      margin-top:.45cqw;
+      color:#c58b12;
+    }
+
+    #glory-case-slider .gcs-headline .gold{
+      color:#c58b12;
+      font-weight:900;
+    }
+
+    #glory-case-slider .gcs-headline .black{
+      color:#050505;
+      font-weight:900;
     }
 
     /* ===== SLIDER ===== */
@@ -1188,7 +1213,6 @@ margin: 4cqw 2cqw 0;
       margin-left:-3cqw;
       margin-top:3cqw;
 
-      /* 도장 이미지는 HTML의 --stamp-img에서 지정 */
       background-image:var(--stamp-img);
       background-size:contain;
       background-repeat:no-repeat;
@@ -1196,7 +1220,6 @@ margin: 4cqw 2cqw 0;
       filter:drop-shadow(0 0.7cqw 1.1cqw rgba(0,0,0,.16));
     }
 
-    /* 도장 이미지가 없을 때 CSS 원형 도장으로 표시 */
     #glory-case-slider .gcs-stamp:not([style*="--stamp-img"]){
       border-radius:50%;
       border:0.55cqw solid var(--gcs-stamp);
@@ -1211,7 +1234,6 @@ margin: 4cqw 2cqw 0;
       border:0.25cqw dashed rgba(207,57,47,0.6);
     }
 
-    /* HTML로 넣는 도장 안 텍스트 */
     #glory-case-slider .gcs-stamp-text{
       position:relative;
       z-index:2;
@@ -1833,7 +1855,7 @@ margin: 4cqw 2cqw 0;
       font-family: 'GMarketSans-500';
       margin:0;
       text-align:center;
-      font-size:5.3cqw;
+      font-size:6.3cqw;
       font-weight:650;
       letter-spacing:-0.075em;
       line-height: 1.4;
