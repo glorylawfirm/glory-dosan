@@ -46,506 +46,297 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
-@font-face {
-  font-family: 'GMarketSans-300';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
-  font-weight: 300;
-  font-display: swap;
-}
+body{margin:0;padding:0;}
 
-@font-face {
-  font-family: 'GMarketSans-400';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GMarketSans-500';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GMarketSans-600';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GMarketSans-700';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GMarketSans-800';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-  font-weight: 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GMarketSans-900';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-  font-weight: 900;
-  font-display: swap;
-}
-
-@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-#glory-rehab-hero {
-  --grh-gold: #b78f3a;
-  --grh-gold-num: #ecc454;
-  --grh-bar-a: #76869e;
-  --grh-bar-b: #67768e;
-  --grh-ink: #2b2b2b;
-  --grh-tag: #333333;
-
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  width: 100%;
+#glory-rehab-hero{
+  --grh-gold:#b78f3a;
+  --grh-gold-num:#ecc454;
+  --grh-bar-a:#76869e;
+  --grh-bar-b:#67768e;
+  --grh-ink:#2b2b2b;
+  --grh-tag:#333333;
+  box-sizing:border-box;
+  display:flex;
+  justify-content:center;
+  width:100%;
   max-width: 840px;
   margin: auto;
-  font-family: 'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  font-family:'Pretendard','Noto Sans KR','Apple SD Gothic Neo',sans-serif;
   background:
     radial-gradient(120% 90% at 80% 0%, #ffffff 0%, rgba(255,255,255,0) 55%),
-    linear-gradient(135deg, #f3f3ef 0%, #fafaf8 45%, #f1f1ec 100%);
+    linear-gradient(135deg,#f3f3ef 0%,#fafaf8 45%,#f1f1ec 100%);
 }
+#glory-rehab-hero *{box-sizing:border-box;}
 
-#glory-rehab-hero * {
-  box-sizing: border-box;
-}
-
-#glory-rehab-hero .grh-inner {
-  container-type: inline-size;
-  position: relative;
-  width: 100%;
-  max-width: 1080px;
-  overflow: hidden;
-  padding: 0 0 7cqw;
-  max-height: 1420px;
+#glory-rehab-hero .grh-inner{
+  container-type:inline-size;
+  position:relative;
+  width:100%;
+  max-width:1080px;
+  overflow:hidden;
+  padding:0 0 7cqw;
 }
 
 /* ===== 배경 이미지 레이어 ===== */
-#glory-rehab-hero .grh-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
+#glory-rehab-hero .grh-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
 }
-
-#glory-rehab-hero .grh-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+#glory-rehab-hero .grh-bg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
 }
 
 /* ===== TOP BAR ===== */
-#glory-rehab-hero .grh-top {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2cqw;
-  padding: 2.6cqw 3cqw 0 1cqw;
+#glory-rehab-hero .grh-top{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2cqw;
+  padding:4.6cqw 5cqw 0;
 }
-
-#glory-rehab-hero .grh-logo {
-  display: flex;
-  align-items: center;
+#glory-rehab-hero .grh-logo{
+  display:flex;
+  align-items:center;
 }
-
-#glory-rehab-hero .grh-logo img {
-  height: 14.2cqw;
-  width: auto;
-  display: block;
-  object-fit: contain;
+#glory-rehab-hero .grh-logo img{
+  height:10.2cqw;
+  width:auto;
+  display:block;
+  object-fit:contain;
 }
-
-#glory-rehab-hero .grh-toptag {
-  font-size: 4.85cqw;
-  font-weight: 700;
-  color: #0a0b0a;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
+#glory-rehab-hero .grh-toptag{
+  font-size:3.85cqw;
+  font-weight:800;
+  color:var(--grh-tag);
+  letter-spacing:-0.01em;
+  white-space:nowrap;
 }
 
 /* ===== HEADLINE ===== */
-#glory-rehab-hero .grh-headline {
-  position: relative;
-  z-index: 1;
-  padding: 7.2cqw 1cqw 0;
+#glory-rehab-hero .grh-headline{
+  position:relative;
+  z-index:1;
+  padding:5cqw 5cqw 0;
 }
-
-#glory-rehab-hero .grh-headline h2 {
-  font-family: 'GMarketSans-400';
-  margin: 0;
-  text-align: center;
-  font-size: 5.5cqw;
-  line-height: 1.45;
-  color: var(--grh-ink);
-  letter-spacing: -0.02em;
+#glory-rehab-hero .grh-headline h2{
+  margin:0;
+  text-align:center;
+  font-size:5cqw;
+  line-height:1.45;
+  font-weight:800;
+  color:var(--grh-ink);
+  letter-spacing:-0.02em;
 }
-
-#glory-rehab-hero .grh-gold {
-  color: #bc8718;
-  font-family: 'GMarketSans-700';
-}
+#glory-rehab-hero .grh-gold{color:var(--grh-gold);}
 
 /* ===== VISUAL ===== */
-#glory-rehab-hero .grh-visual {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  margin-top: 16.8cqw;
-  padding: 0;
-  min-height: 58cqw;
-  overflow: visible;
+#glory-rehab-hero .grh-visual{
+  position:relative;
+  z-index:1;
+  width:100%;
+  margin-top:1.8cqw;
+  padding:0;
+  min-height:58cqw; /* 변호사 이미지 하단과 연락처 바가 딱 붙게 */
+  overflow:visible;
 }
 
 /* 변호사 사진 */
-#glory-rehab-hero .grh-photo {
-  position: absolute;
-  left: 15%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 71%;
-  max-width: none;
-  margin: 0;
-  z-index: 2;
+#glory-rehab-hero .grh-photo{
+  position:absolute;
+  left:19%;
+  bottom:0;
+  transform:translateX(-50%);
+  width:62%;
+  max-width:none;
+  margin:0;
+  z-index:2;
 }
-
-#glory-rehab-hero .grh-photo img {
-  width: 100%;
-  height: auto;
-  display: block;
+#glory-rehab-hero .grh-photo img{
+  width:100%;
+  height:auto;
+  display:block;
 }
 
 /* 증서 - 변호사 왼쪽 어깨 쪽 */
-#glory-rehab-hero .grh-cert {
-  position: absolute;
-  left: 7%;
+#glory-rehab-hero .grh-cert{
+  position:absolute;
+  left: 12%;
   top: 32.5%;
-  width: 25%;
-  max-width: none;
-  z-index: 4;
+  width: 19%;
+  max-width:none;
+  z-index:4;
 }
-
-#glory-rehab-hero .grh-cert > img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0.6cqw;
+#glory-rehab-hero .grh-cert > img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:0.6cqw;
 }
 
 /* 서명 - 오른쪽 어깨 쪽 */
-#glory-rehab-hero .grh-sign {
-  position: absolute;
-  right: 10%;
-  top: 32%;
-  z-index: 5;
-  font-family: 'Nanum Pen Script', 'Pretendard', cursive;
-  font-size: 5.9cqw;
-  font-weight: 400;
-  color: #2b2b2b;
-  white-space: nowrap;
-  transform: rotate(-2deg);
-  letter-spacing: 0.02em;
+#glory-rehab-hero .grh-sign{
+  position:absolute;
+  right:13%;
+  top:32%;
+  z-index:5;
+  font-family:'Nanum Pen Script','Pretendard',cursive;
+  font-size:4.7cqw;
+  font-weight:400;
+  color:#2b2b2b;
+  white-space:nowrap;
+  transform:rotate(-2deg);
+  letter-spacing:0.02em;
 }
 
 /* ===== CONTACT BAR ===== */
-#glory-rehab-hero .grh-contact {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  align-items: stretch;
-  width: 100%;
-  margin-top: 0;
-  padding: 3.2cqw 0;
-
-  background: linear-gradient(90deg, #8193a7 0%, #8293A6 45%, #8092a6 100%);
-
-  box-shadow:
-    inset 0 0.18cqw 0 rgba(255, 255, 255, 0.16),
-    inset 0 -0.18cqw 0 rgba(40, 55, 75, 0.16);
-
-  overflow: hidden;
+#glory-rehab-hero .grh-contact{
+  position:relative;
+  z-index:3;
+  display:flex;
+  align-items:stretch;
+  width:100%;
+  margin-top:0; /* 사진과 틈 없게 */
+  padding:3cqw 4cqw;
+  background:linear-gradient(180deg,var(--grh-bar-a),var(--grh-bar-b));
 }
-
-#glory-rehab-hero .grh-contact::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 22% 0%, rgba(255,255,255,0.18), transparent 34%),
-    linear-gradient(180deg, rgba(255,255,255,0.12), transparent 52%);
+#glory-rehab-hero .grh-contact-col{
+  flex:1 1 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:0.6cqw;
 }
-
-#glory-rehab-hero .grh-contact-col {
-  position: relative;
-  z-index: 1;
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7cqw;
+/* 전화 연결 링크 */
+#glory-rehab-hero a.grh-contact-col{
+  text-decoration:none;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:opacity .2s ease;
 }
-
-#glory-rehab-hero .grh-contact-label {
-  font-family: 'GMarketSans-500';
-  font-size: 4.2cqw;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.96);
-  letter-spacing: -0.02em;
-  line-height: 1;
+#glory-rehab-hero a.grh-contact-col:active{
+  opacity:0.65;
 }
-
-/* 전화번호 골드 그라데이션 */
-#glory-rehab-hero .grh-contact-num {
-  display: inline-block;
-  font-family: 'GMarketSans-900';
-  margin-top:10px;
-  font-size: 5.2cqw;
-  font-weight: 900;
-  line-height: 1;
-  /* letter-spacing: -0.055em; */
-  white-space: nowrap;
-
-  background: linear-gradient(
-    90deg,
-    #ffe08a 0%,
-    #f8cb62 30%,
-    #f3bd4d 58%,
-    #ffd46f 78%,
-    #ffe59d 100%
-  );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-
-  filter: drop-shadow(0 0.18cqw 0 rgba(92, 69, 24, 0.18));
+#glory-rehab-hero .grh-contact-label{
+  font-size:3cqw;
+  font-weight:800;
+  color:#ffffff;
+  letter-spacing:0.02em;
 }
-
-#glory-rehab-hero .grh-divider {
-  position: relative;
-  z-index: 1;
-  flex: 0 0 auto;
-  width: 0.16cqw;
-  align-self: stretch;
-  margin: 0.4cqw 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.48) 50%,
-    transparent 100%
-  );
+#glory-rehab-hero .grh-contact-num{
+  font-size:4.5cqw;
+  font-weight:800;
+  color:var(--grh-gold-num);
+  letter-spacing:0.01em;
+}
+#glory-rehab-hero .grh-divider{
+  flex:0 0 auto;
+  width:0.16cqw;
+  align-self:stretch;
+  margin:0.6cqw 0;
+  background:rgba(255,255,255,0.45);
 }
 
 /* ===== BOTTOM BOX ===== */
-#glory-rehab-hero .grh-bottom {
-position: relative;
-  z-index: 1;
-  margin: 4cqw 4cqw 0;
-  padding: 5cqw 4cqw;
-  background: #fbfbf9;
-  border: 1px solid #000;  
-  border-radius: 2cqw;
-  text-align: center;
-    box-shadow:
-    0 4px 0 rgba(0, 0, 0, 0.18),
-    0 8px 12px rgba(0, 0, 0, 0.22);
+#glory-rehab-hero .grh-bottom{
+  position:relative;
+  z-index:1;
+  margin:4cqw 4cqw 0;
+  padding:5cqw 4cqw;
+  background:#fbfbf9;
+  border:0.16cqw solid #e7e5dd;
+  border-radius:2cqw;
+  text-align:center;
+}
+#glory-rehab-hero .grh-bottom p{
+  margin:0;
+  font-size:3.9cqw;
+  line-height:1.55;
+  font-weight:800;
+  color:var(--grh-ink);
+  letter-spacing:-0.02em;
 }
 
-#glory-rehab-hero .grh-bottom p {
-  margin: 0;
-  font-size: 5cqw;
-  line-height: 1.55;
-  /* font-weight: 800; */
-  color: var(--grh-ink);
-  letter-spacing: -0.02em;
-  font-family: 'GMarketSans-400' !important;
+/* ===== WATERMARK (slow marquee) ===== */
+#glory-rehab-hero .grh-watermark{
+  position:absolute;
+  left:0;
+  bottom:0.4cqw;
+  z-index:0;
+  width:100%;
+  overflow:hidden;
+  pointer-events:none;
+  user-select:none;
 }
-
-/* ===== WATERMARK ===== */
-#glory-rehab-hero .grh-watermark {
-  position: absolute;
-  left: 0;
-  bottom: 0.4cqw;
-  z-index: 0;
-  width: 100%;
-  overflow: hidden;
-  pointer-events: none;
-  user-select: none;
+#glory-rehab-hero .grh-watermark-track{
+  display:flex;
+  width:max-content;
+  animation:grhMarquee 32s linear infinite;
 }
-
-#glory-rehab-hero .grh-watermark-track {
-  display: flex;
-  width: max-content;
-  animation: grhMarquee 32s linear infinite;
+#glory-rehab-hero .grh-watermark-track span{
+  display:block;
+  padding-right:6cqw;
+  font-size:9cqw;
+  font-weight:900;
+  letter-spacing:0.06em;
+  line-height:1;
+  color:rgba(120,120,120,0.12);
+  white-space:nowrap;
 }
-
-#glory-rehab-hero .grh-watermark-track span {
-  display: block;
-  padding-right: 6cqw;
-  font-size: 12cqw;
-  font-weight: 900;
-  letter-spacing: -1px;
-  line-height: 1;
-  color: rgba(120,120,120,0.12);
-  white-space: nowrap;
-}
-
-@keyframes grhMarquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+@keyframes grhMarquee{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
 }
 
 /* ===== FADE ANIMATIONS ===== */
-@keyframes grhFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+@keyframes grhFadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes grhFadeInUp{from{opacity:0;transform:translateY(38px);}to{opacity:1;transform:translateY(0);}}
+@keyframes grhFadeInLeft{from{opacity:0;transform:translateX(-46px);}to{opacity:1;transform:translateX(0);}}
+@keyframes grhFadeInRight{from{opacity:0;transform:translateX(46px);}to{opacity:1;transform:translateX(0);}}
 
-@keyframes grhFadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(38px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+#glory-rehab-hero.grh-js [data-grh-anim]{opacity:0;will-change:opacity,transform;}
+#glory-rehab-hero.grh-js [data-grh-anim="in"].grh-show{animation:grhFadeIn .8s ease forwards;}
+#glory-rehab-hero.grh-js [data-grh-anim="up"].grh-show{animation:grhFadeInUp .85s cubic-bezier(.22,.61,.36,1) forwards;}
+#glory-rehab-hero.grh-js [data-grh-anim="left"].grh-show{animation:grhFadeInLeft .85s cubic-bezier(.22,.61,.36,1) forwards;}
+#glory-rehab-hero.grh-js [data-grh-anim="right"].grh-show{animation:grhFadeInRight .85s cubic-bezier(.22,.61,.36,1) forwards;}
 
-@keyframes grhFadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-46px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes grhFadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(46px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-#glory-rehab-hero.grh-js [data-grh-anim] {
-  opacity: 0;
-  will-change: opacity, transform;
-}
-
-#glory-rehab-hero.grh-js [data-grh-anim="in"].grh-show {
-  animation: grhFadeIn .8s ease forwards;
-}
-
-#glory-rehab-hero.grh-js [data-grh-anim="up"].grh-show {
-  animation: grhFadeInUp .85s cubic-bezier(.22,.61,.36,1) forwards;
-}
-
-#glory-rehab-hero.grh-js [data-grh-anim="left"].grh-show {
-  animation: grhFadeInLeft .85s cubic-bezier(.22,.61,.36,1) forwards;
-}
-
-#glory-rehab-hero.grh-js [data-grh-anim="right"].grh-show {
-  animation: grhFadeInRight .85s cubic-bezier(.22,.61,.36,1) forwards;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #glory-rehab-hero.grh-js [data-grh-anim] {
-    opacity: 1 !important;
-    animation: none !important;
-  }
-
-  #glory-rehab-hero .grh-watermark-track {
-    animation: none !important;
-  }
+@media (prefers-reduced-motion:reduce){
+  #glory-rehab-hero.grh-js [data-grh-anim]{opacity:1!important;animation:none!important;}
+  #glory-rehab-hero .grh-watermark-track{animation:none!important;}
 }
 
 /* 좁은 폭 보정 */
-@container (max-width: 520px) {
-  #glory-rehab-hero .grh-visual {
-    min-height: 66cqw;
+@container (max-width:520px){
+  #glory-rehab-hero .grh-visual{
+    min-height:66cqw;
   }
 
-  #glory-rehab-hero .grh-photo {
-    width: 68%;
-    left: 17%;
+  #glory-rehab-hero .grh-photo{
+    width:68%;
+    left:17%;
   }
 
-  #glory-rehab-hero .grh-cert {
-    left: 7%;
-    top: 31%;
-    width: 22%;
+  #glory-rehab-hero .grh-cert{
+    left:7%;
+    top:31%;
+    width:22%;
   }
 
-  #glory-rehab-hero .grh-sign {
-    right: 8%;
-    top: 35%;
-    font-size: 5.6cqw;
-  }
-
-  #glory-rehab-hero .grh-contact {
-    padding: 3.5cqw 0;
-  }
-
-  #glory-rehab-hero .grh-contact-label {
-    font-size: 3.9cqw;
-  }
-
-  #glory-rehab-hero .grh-contact-num {
-    font-size: 4.85cqw;
-    letter-spacing: -0.065em;
+  #glory-rehab-hero .grh-sign{
+    right:8%;
+    top:35%;
+    font-size:5.6cqw;
   }
 }
-
-.grh-contact-num {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.grh-contact-num:hover {
-  text-decoration: none;
-}
-
-
 </style>
 
 
@@ -554,7 +345,7 @@ position: relative;
 
     <!-- 배경 이미지 레이어 : 아래 img 의 src 경로만 교체하세요. 이미지 안 쓸 경우 이 줄 전체 삭제하면 기본 그라데이션 유지 -->
     <div class="grh-bg">
-      <img src="./img/back-intro.jpg" alt="">
+      <img src="./img/background.webp" alt="">
     </div>
 
     <!-- ===== 상단 로고 / 태그 ===== -->
@@ -565,7 +356,7 @@ position: relative;
       </div>
       <div class="grh-toptag" data-grh-anim="right">개인회생전문 법무법인</div>
     </div>
-
+<br><br>
     <!-- ===== 헤드라인 ===== -->
     <div class="grh-headline">
       <h2 data-grh-anim="up">개인회생 <span class="grh-gold">변호사 수임료</span> 걱정하지 마세요</h2>
@@ -577,7 +368,7 @@ position: relative;
 
       <!-- 변호사 사진 : src 경로만 교체하세요 -->
       <div class="grh-photo" data-grh-anim="up">
-        <img src="./img/lawyer-6.png" alt="변호사 이아무">
+        <img src="./img/lawyer-5.png" alt="변호사 이아무">
       </div>
 
       <!-- 전문분야 등록증서 : src 경로만 교체하세요 -->
@@ -592,21 +383,21 @@ position: relative;
 
     <!-- ===== 연락처 바 ===== -->
     <div class="grh-contact" data-grh-anim="up">
-      <div class="grh-contact-col">
+      <a class="grh-contact-col" href="tel:1544-0904">
         <div class="grh-contact-label">전화상담</div>
-        <a href="tel:15440904" class="grh-contact-num">1544-0904</a>
-      </div>
+        <div class="grh-contact-num">1544-0904</div>
+      </a>
       <div class="grh-divider"></div>
-      <div class="grh-contact-col">
+      <a class="grh-contact-col" href="tel:010-8182-0478">
         <div class="grh-contact-label">긴급상담</div>
-         <a href="tel:01081820478" class="grh-contact-num">010-8182-0478</a>
-      </div>
+        <div class="grh-contact-num">010-8182-0478</div>
+      </a>
     </div>
 
     <!-- ===== 하단 안내 박스 ===== -->
     <div class="grh-bottom" data-grh-anim="up" style="animation-delay:.1s">
-      <p style="font-family: 'GMarketSans';">고민할 시간에 5분만 상담 받아보세요</p>
-      <p style="font-family: 'GMarketSans';"><span class="grh-gold" style="color:#dcad47;">친절한 무료 상담</span>을 약속드립니다</p>
+      <p>고민할 시간에 5분만 상담 받아보세요</p>
+      <p><span class="grh-gold">친절한 무료 상담</span>을 약속드립니다</p>
     </div>
 
     <!-- ===== 워터마크 (천천히 흐르는 효과) ===== -->
@@ -640,10 +431,10 @@ position: relative;
   items.forEach(function(el){ io.observe(el); });
 })();
 </script>
+
+
+
 </section>
-
-
-
 
 
 
@@ -668,7 +459,6 @@ position: relative;
   background:
     repeating-linear-gradient(135deg, rgba(140,140,140,0.035) 0 1px, transparent 1px 30px),
     linear-gradient(180deg,#f6f6f3 0%,#fbfbf9 100%);
-  position:relative;
 }
 #glory-faq-experts *{box-sizing:border-box;}
 
@@ -677,7 +467,7 @@ position: relative;
   position:relative;
   width:100%;
   max-width:1080px;
-  padding:6cqw 2cqw;
+  padding:8cqw 5cqw;
   overflow:hidden;
 }
 
@@ -731,42 +521,34 @@ position: relative;
 #glory-faq-experts .gfe-num{
   font-size:4.7cqw;
   font-weight:800;
+  color:var(--gfe-gold);
   line-height:1;
   flex:0 0 auto;
-
-  /* 텍스트 그라데이션 */
-  background: linear-gradient(180deg, #ffd96f 0%, #f5b72f 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
 }
 #glory-faq-experts .gfe-qtext{
-  font-family: 'Noto Sans KR';
-  font-size:4.6cqw;
-  font-weight:570;
-  color:#0d0e0d;
+  font-size:4.2cqw;
+  font-weight:800;
+  color:var(--gfe-ink);
   line-height:1.25;
   letter-spacing:-0.02em;
 }
 #glory-faq-experts .gfe-bubble{
-  background:linear-gradient(135deg,#fff 0%,#f9f8f6 55%,#f4f2ef 100%);
+  background:#fbfbfa;
   border:0.1cqw solid #eeeee8;
   border-radius:1.8cqw;
   padding:2.7cqw 3.2cqw;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.36);
+  box-shadow:0 1.4cqw 3.2cqw rgba(0,0,0,0.06);
 }
 #glory-faq-experts .gfe-bubble p{
-  font-family: 'GMarketSans-400';
   margin:0;
-  font-size:3.2cqw;
+  font-size:2.95cqw;
   line-height:1.62;
-  /* font-weight:600; */
-  color:#101010;
+  font-weight:600;
+  color:var(--gfe-body);
   letter-spacing:-0.01em;
 }
 #glory-faq-experts .gfe-gold{
-  color:#ecb229;
+  color:var(--gfe-gold);
   font-weight:800;
 }
 
@@ -780,11 +562,11 @@ position: relative;
   flex:0 0 auto;
 }
 #glory-faq-experts .gfe-photo{
-  width:26cqw;
+  width:23cqw;
   aspect-ratio:1 / 1;
   border-radius:50%;
   overflow:hidden;
-  /* border:0.3cqw solid #ffffff; */
+  border:0.3cqw solid #ffffff;
   box-shadow:0 1cqw 2.6cqw rgba(0,0,0,0.12);
 }
 #glory-faq-experts .gfe-photo img{
@@ -798,7 +580,7 @@ position: relative;
   align-items:baseline;
   gap:0.6cqw;
   margin-top:-2.5cqw;
-  padding:0.8cqw 3.1cqw;
+  padding:0.8cqw 1.7cqw;
   background:var(--gfe-badge);
   /* border-radius:1.6cqw; */
   white-space:nowrap;
@@ -836,10 +618,10 @@ position: relative;
 
   <div class="gfe-inner">
 
-    <!-- 배경 이미지 레이어 : 아래 img 의 src 경로만 교체 -->
-    <div class="gfe-bg">
-      <img src="./img/back-1.jpg" alt="">
-    </div>
+    <!-- 배경 이미지 레이어 : 아래 img 의 src 경로만 교체. 안 쓰면 이 div 삭제 시 기본 배경 유지 -->
+    <!-- <div class="gfe-bg">
+      <img src="배경경로.png" alt="">
+    </div> -->
 
     <!-- ===== 01 (사진 오른쪽) ===== -->
     <div class="gfe-item gfe-item--right">
@@ -955,6 +737,7 @@ position: relative;
 
 
 
+
 <section id="glory-case-slider">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
@@ -976,7 +759,6 @@ position: relative;
       background:
         repeating-linear-gradient(135deg, rgba(150,150,150,0.04) 0 1px, transparent 1px 32px),
         linear-gradient(135deg,#e9ebee 0%,#f6f7f8 55%,#ebedf0 100%);
-      position:relative;
     }
 
     #glory-case-slider *{
@@ -988,33 +770,7 @@ position: relative;
       position:relative;
       width:100%;
       max-width:1080px;
-      padding:2cqw 1cqw;
-      overflow:hidden;
-    }
-
-    /* ===== 배경 이미지 레이어 ===== */
-    #glory-case-slider .gcs-bg{
-      position:absolute;
-      inset:0;
-      z-index:0;
-      overflow:hidden;
-      pointer-events:none;
-    }
-
-    #glory-case-slider .gcs-bg img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-      display:block;
-    }
-
-    /* 배경 위 콘텐츠가 앞으로 올라오도록 */
-    #glory-case-slider .gcs-headline,
-    #glory-case-slider .gcs-viewport,
-    #glory-case-slider .gcs-controls{
-      position:relative;
-      z-index:1;
+      padding:8cqw 5cqw;
     }
 
     /* ===== HEADLINE ===== */
@@ -1024,20 +780,18 @@ position: relative;
     }
 
     #glory-case-slider .gcs-headline .l1{
-      font-family:'GMarketSans-400';
       margin:0;
-      font-size:5.4cqw;
-      font-weight:700;
+      font-size:5.2cqw;
+      font-weight:800;
       color:var(--gcs-ink);
       letter-spacing:-0.01em;
     }
 
     #glory-case-slider .gcs-headline .l2{
-      font-family:'GMarketSans-800';
       margin:1cqw 0 0;
       font-size:7.4cqw;
       font-weight:800;
-      color:#ecb22b;
+      color:var(--gcs-gold);
       letter-spacing:-0.01em;
     }
 
@@ -1087,9 +841,8 @@ position: relative;
     }
 
     #glory-case-slider .gcs-card-title{
-      font-family:'GMarketSans-400';
       font-size:5.6cqw;
-      font-weight:450;
+      font-weight:800;
       color:var(--gcs-ink);
       letter-spacing:-0.01em;
     }
@@ -1102,78 +855,74 @@ position: relative;
     }
 
     #glory-case-slider .gcs-card-desc{
-      font-family:'GMarketSans-400';
       font-size:5cqw;
+      font-weight:700;
       line-height:1.45;
       color:#373737;
-      letter-spacing:0;
+      letter-spacing:-0.01em;
     }
 
     /* ===== RESULT ROW ===== */
     #glory-case-slider .gcs-result{
-      width:82cqw;
+      width:74cqw;
       margin:5cqw auto 0;
       display:flex;
       align-items:center;
-      gap:0;
-      position:relative;
-      z-index:2;
+      gap:2.5cqw;
     }
 
     #glory-case-slider .gcs-gold{
-      flex:0 0 64cqw;
+      flex:1 1 auto;
       background:linear-gradient(180deg,var(--gcs-goldbox-a),var(--gcs-goldbox-b));
       border-radius:3cqw;
-      padding:4.2cqw 5cqw;
+      padding:3.2cqw 4cqw;
       text-align:center;
       box-shadow:0 1.4cqw 3cqw rgba(180,140,40,0.25);
-      position:relative;
-      z-index:1;
     }
 
     #glory-case-slider .gcs-rate{
       display:flex;
       align-items:baseline;
       justify-content:center;
-      gap:1.6cqw;
+      gap:1.4cqw;
       white-space:nowrap;
     }
 
     #glory-case-slider .gcs-rate-label{
-      font-size:5.7cqw;
+      font-size:5.4cqw;
       font-weight:800;
       color:var(--gcs-darkgold);
     }
 
     #glory-case-slider .gcs-rate-num{
-      font-size:8.3cqw;
+      font-size:6.4cqw;
       font-weight:800;
       color:#ffffff;
     }
 
     #glory-case-slider .gcs-gold-div{
-      width:86%;
-      height:0.25cqw;
-      margin:2.7cqw auto;
-      background:rgba(255,255,255,0.78);
+      width:88%;
+      height:0.2cqw;
+      margin:2.2cqw auto;
+      background:rgba(255,255,255,0.75);
     }
 
     #glory-case-slider .gcs-amount{
       display:flex;
       align-items:baseline;
       justify-content:center;
-      gap:1.6cqw;
+      gap:1.4cqw;
       white-space:nowrap;
     }
 
     #glory-case-slider .gcs-amount-num{
-      font-size:8.2cqw;
+      font-size:7.2cqw;
       font-weight:800;
       color:#ffffff;
     }
 
     #glory-case-slider .gcs-amount-suffix{
-      font-size:8cqw;
+      font-size:6cqw;
       font-weight:800;
       color:var(--gcs-darkgold);
     }
@@ -1181,17 +930,14 @@ position: relative;
     /* ===== STAMP IMAGE + HTML TEXT ===== */
     #glory-case-slider .gcs-stamp{
       position:relative;
-      z-index:3;
       flex:0 0 auto;
-      width:29cqw;
+      width:31cqw;
       aspect-ratio:1 / 1;
       display:flex;
       align-items:center;
       justify-content:center;
       transform:rotate(-8deg);
       overflow:visible;
-      margin-left:-3cqw;
-      margin-top:3cqw;
 
       /* 도장 이미지는 HTML의 --stamp-img에서 지정 */
       background-image:var(--stamp-img);
@@ -1221,12 +967,13 @@ position: relative;
       position:relative;
       z-index:2;
       display:block;
+      font-family:'Nanum Brush Script','Pretendard',cursive;
       font-size:8.4cqw;
-      font-weight:bold;
-      color:#de2009;
+      font-weight:400;
+      color:var(--gcs-stamp);
       line-height:1;
       letter-spacing:-0.04em;
-      transform:rotate(341deg);
+      transform:rotate(3deg);
       text-align:center;
       white-space:nowrap;
       text-shadow:0 0.2cqw 0 rgba(255,255,255,.18);
@@ -1345,18 +1092,13 @@ position: relative;
 
   <div class="gcs-inner">
 
-    <!-- 배경 이미지 레이어 : 아래 src 경로만 교체하세요 -->
-    <div class="gcs-bg">
-      <img src="./img/back-1.jpg" alt="">
-    </div>
-
     <div class="gcs-viewport" data-gcs-anim>
       <div class="gcs-track">
 
         <!-- ===== 사례 1 ===== -->
         <div class="gcs-slide">
           <div class="gcs-headline">
-            <p class="l1">부양 가족 인정으로</p>
+            <p class="l1">부양가족 인정으로</p>
             <p class="l2">생계비 확보 사례</p>
           </div>
 
@@ -1407,7 +1149,7 @@ position: relative;
           <div class="gcs-result">
             <div class="gcs-gold">
               <div class="gcs-rate">
-                <span class="gcs-rate-label">변제율 :</span>
+                <span class="gcs-rate-label">변제율</span>
                 <span class="gcs-rate-num">14.5%</span>
               </div>
               <div class="gcs-gold-div"></div>
@@ -1442,7 +1184,7 @@ position: relative;
           <div class="gcs-result">
             <div class="gcs-gold">
               <div class="gcs-rate">
-                <span class="gcs-rate-label">탕감률 :</span>
+                <span class="gcs-rate-label">탕감률</span>
                 <span class="gcs-rate-num">92%</span>
               </div>
               <div class="gcs-gold-div"></div>
@@ -1735,21 +1477,20 @@ position: relative;
   </script>
 </section>
 
-
-
-
 <section id="glory-rehab-expert-section">
   <style>
     #glory-rehab-expert-section{
-      --gre-gold:#f2b12c;
+      --gre-gold:#f2a93c;
       --gre-gold-soft:#f5bf5a;
       --gre-yellow:#f4c33f;
-      --gre-dark:#111111;
+      --gre-dark:#1b1b1b;
       --gre-ink:#222222;
       --gre-gray:#5f5d5a;
-      --gre-line:#171717;
+      --gre-line:#1c1c1c;
       --gre-bg-a:#f3f2f0;
       --gre-bg-b:#e6e4e1;
+
+      --gre-bg-image:none;
 
       container-type:inline-size;
       position:relative;
@@ -1758,11 +1499,13 @@ position: relative;
       width:100%;
       max-width:840px;
       margin:0 auto;
-      padding:5cqw 1cqw 4cqw 2cqw;
-      background-image:url('./img/back-1.jpg');
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
+      padding:5cqw 4.5cqw 6cqw;
+      background-image:
+        linear-gradient(135deg,rgba(243,242,240,.88) 0%,rgba(230,228,225,.88) 100%),
+        var(--gre-bg-image);
+      background-size:cover, cover;
+      background-position:center center, center center;
+      background-repeat:no-repeat, no-repeat;
       font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
       color:var(--gre-ink);
       line-height:1.3;
@@ -1774,22 +1517,19 @@ position: relative;
       box-sizing:border-box;
     }
 
-    /* ===== HEAD ===== */
     #glory-rehab-expert-section .gre-head{
       position:relative;
       z-index:2;
-      margin:0 0 3.8cqw;
+      margin:0 0 3.4cqw;
     }
 
     #glory-rehab-expert-section .gre-head-1,
     #glory-rehab-expert-section .gre-head-2{
-      font-family:'GMarketSans-400';
       margin:0;
-      font-size:6cqw;
-      font-weight:400;
-      letter-spacing:-0.03em;
-      line-height:1.16;
-      padding-left:10px;
+      font-size:5cqw;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      line-height:1.18;
     }
 
     #glory-rehab-expert-section .gre-head-1{
@@ -1797,23 +1537,21 @@ position: relative;
     }
 
     #glory-rehab-expert-section .gre-head-2{
-      color:#ecb229;
-      margin-top:.7cqw;
+      color:var(--gre-gold);
+      margin-top:.4cqw;
     }
 
-    /* ===== BODY ===== */
     #glory-rehab-expert-section .gre-body{
       position:relative;
       z-index:2;
       display:flex;
       align-items:flex-start;
-      gap:2.6cqw;
+      gap:1.5cqw;
     }
 
-    /* ===== LEFT SHORTFORM ===== */
     #glory-rehab-expert-section .gre-card{
       box-sizing:border-box;
-      flex:0 0 48.5%;
+      flex:0 0 43.5%;
       background:#0c0c0c;
       display:flex;
       flex-direction:column;
@@ -1821,24 +1559,25 @@ position: relative;
       box-shadow:0 1.5cqw 4cqw rgba(0,0,0,.18);
     }
 
-    #glory-rehab-expert-section .gre-naver-card{
+    #glory-rehab-expert-section .gre-yt-card{
       position:relative;
       aspect-ratio:9 / 16;
       align-self:flex-start;
       background:#000;
     }
 
-    #glory-rehab-expert-section .gre-naver-frame{
+    #glory-rehab-expert-section .gre-yt-frame{
       position:relative;
       width:100%;
       height:100%;
       overflow:hidden;
       background:#000;
-      overscroll-behavior:contain;
-      touch-action:pan-y;
+      -webkit-user-select:none;
+      user-select:none;
+      -webkit-touch-callout:none;
     }
 
-    #glory-rehab-expert-section .gre-naver-frame iframe{
+    #glory-rehab-expert-section .gre-yt-frame iframe{
       position:absolute;
       inset:0;
       width:100%;
@@ -1847,197 +1586,232 @@ position: relative;
       display:block;
       background:#000;
       pointer-events:none;
+      -webkit-user-select:none;
+      user-select:none;
+      opacity:0;
+      transition:opacity .45s ease;
     }
 
-    /* ===== RIGHT CONTENT ===== */
+    #glory-rehab-expert-section .gre-yt-frame.gre-yt-playing iframe{
+      opacity:1;
+    }
+
+    #glory-rehab-expert-section .gre-yt-block{
+      position:absolute;
+      inset:0;
+      z-index:4;
+      background:transparent;
+      pointer-events:auto;
+      cursor:default;
+      -webkit-user-select:none;
+      user-select:none;
+      -webkit-user-drag:none;
+    }
+
+    #glory-rehab-expert-section .gre-yt-controls{
+      position:absolute;
+      top:2.4cqw;
+      left:2.4cqw;
+      z-index:5;
+      display:flex;
+      gap:1.4cqw;
+    }
+
+    #glory-rehab-expert-section .gre-yt-ctrl{
+      width:6cqw;
+      height:6cqw;
+      min-width:34px;
+      min-height:34px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:0;
+      border:0;
+      border-radius:50%;
+      background:rgba(18,18,18,.55);
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+      -webkit-backdrop-filter:blur(2px);
+      backdrop-filter:blur(2px);
+      transition:background .2s ease, transform .15s ease;
+    }
+
+    #glory-rehab-expert-section .gre-yt-ctrl:hover{
+      background:rgba(18,18,18,.74);
+    }
+
+    #glory-rehab-expert-section .gre-yt-ctrl:active{
+      transform:scale(.92);
+    }
+
+    #glory-rehab-expert-section .gre-yt-ctrl svg{
+      width:3.1cqw;
+      height:3.1cqw;
+      min-width:14px;
+      min-height:14px;
+      flex:0 0 auto;
+      display:block;
+    }
+
+    #glory-rehab-expert-section .gre-yt-sound svg{
+      fill:var(--gre-gold);
+    }
+
+    /* 소리 켜기/끄기 아이콘 토글 */
+    #glory-rehab-expert-section .gre-yt-sound .gre-ic-on{
+      display:none;
+    }
+
+    #glory-rehab-expert-section .gre-yt-sound .gre-ic-muted{
+      display:block;
+    }
+
+    #glory-rehab-expert-section .gre-yt-sound:not(.is-muted) .gre-ic-on{
+      display:block;
+    }
+
+    #glory-rehab-expert-section .gre-yt-sound:not(.is-muted) .gre-ic-muted{
+      display:none;
+    }
+
     #glory-rehab-expert-section .gre-right{
-      position:relative;
-      flex:1 1 0;
+      flex:1 1 auto;
       display:flex;
       flex-direction:column;
       justify-content:flex-start;
-      gap:4cqw;
+      gap:3cqw;
       min-width:0;
-      padding-right:0;
-      padding-top:1cqw;
     }
 
-    /* 맨 오른쪽 세로선 - 아래 문구까지 연결 */
-    #glory-rehab-expert-section .gre-right::after{
-      content:'';
-      position:absolute;
-      top:0;
-      right:0;
-      bottom:0.2cqw;
-      width:0.34cqw;
-      background:var(--gre-line);
-      z-index:1;
-    }
-
-    /* ===== POINTS ===== */
     #glory-rehab-expert-section .gre-points{
-      position:relative;
-      z-index:2;
       box-sizing:border-box;
       display:flex;
       flex-direction:column;
-      gap:3.6cqw;
+      gap:3.4cqw;
       padding-right:0;
-      border-right:0;
+      border-right:0.32cqw solid var(--gre-line);
     }
 
     #glory-rehab-expert-section .gre-point{
       display:flex;
       flex-direction:column;
-      align-items:stretch;
-      gap:1cqw;
     }
 
     #glory-rehab-expert-section .gre-badge{
       align-self:flex-end;
-      margin:0 8.8cqw 0 0;
-      padding:0.75cqw 1.8cqw 0.8cqw;
-      border-radius:999px;
-      background:linear-gradient(135deg, #ffd66a 0%, #ffc94f 45%, #f5ad25 100%);
-      color:#111;
-      font-size:1.7cqw;
+      margin:0 10.6cqw 1cqw 0;
+      padding:0.5cqw 1.4cqw;
+      border-radius:1.2cqw;
+      background:var(--gre-gold);
+      color:#1a1a1a;
+      font-size:1.55cqw;
       font-weight:800;
-      letter-spacing:-0.01em;
+      letter-spacing:.02em;
       line-height:1;
     }
 
     #glory-rehab-expert-section .gre-point-row{
       display:grid;
-      grid-template-columns:minmax(0, 1fr) 4.4cqw;
+      grid-template-columns:1fr auto 1fr;
       align-items:center;
       width:100%;
-      column-gap:0;
     }
 
     #glory-rehab-expert-section .gre-point-text{
-      font-family:'GMarketSans-400';
-      width:100%;
+      grid-column:2;
+      width:35cqw;
       text-align:center;
       position:relative;
-      font-size:4.55cqw;
-      font-weight:590;
-      color:#0a0b0a;
-      letter-spacing:-0.04em;
+      font-size:4.2cqw;
+      font-weight:800;
+      color:var(--gre-dark);
+      letter-spacing:-0.02em;
       white-space:nowrap;
-      line-height:1.08;
-      padding-left:1cqw;
-      padding-right:1cqw;
+    }
+
+    #glory-rehab-expert-section .gre-emph-dots{
+      position:absolute;
+      top:-2.4cqw;
+      left:8.5cqw;
+      display:flex;
+      gap:0.8cqw;
+      pointer-events:none;
+    }
+
+    #glory-rehab-expert-section .gre-emph-dots i{
+      width:0.95cqw;
+      height:0.95cqw;
+      border-radius:50%;
+      background:var(--gre-dark);
+      display:block;
     }
 
     #glory-rehab-expert-section .gre-tick{
+      grid-column:3;
       justify-self:end;
-      width:4.4cqw;
-      height:0.25cqw;
+      width:2.8cqw;
+      height:0.28cqw;
       background:var(--gre-line);
     }
 
-    /* ===== 1천건 강조점 : 살짝 위로 올림 ===== */
-    #glory-rehab-expert-section .gre-word-dots{
-      position:relative;
-      display:inline-block;
+    #glory-rehab-expert-section .gre-dots{
+      display:flex;
+      gap:0.7cqw;
+      margin:0 5cqw 0.4cqw 0;
     }
 
-    #glory-rehab-expert-section .gre-word-dots::before{
-      content:'';
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-      top:-1.9cqw;
-      width:0.95cqw;
-      height:0.95cqw;
+    #glory-rehab-expert-section .gre-dots i{
+      width:0.85cqw;
+      height:0.85cqw;
       border-radius:50%;
-      background:var(--gre-gold);
-      box-shadow:-2.8cqw 0 0 var(--gre-gold), 2.8cqw 0 0 var(--gre-gold);
-      pointer-events:none;
+      background:var(--gre-dark);
+      display:block;
     }
 
-    /* ===== 전문가 음절별 강조점 ===== */
-    #glory-rehab-expert-section .gre-syllable-dots{
-      display:inline-flex;
-      position:relative;
-      align-items:baseline;
-      color:#c78f15;
-      font-weight:800;
-    }
-
-    #glory-rehab-expert-section .gre-syllable-dots span{
-      position:relative;
-      display:inline-block;
-    }
-
-    #glory-rehab-expert-section .gre-syllable-dots span::before{
-      content:'';
-      position:absolute;
-      left:50%;
-      top:-1.45cqw;
-      transform:translateX(-50%);
-      width:0.95cqw;
-      height:0.95cqw;
-      border-radius:50%;
-      background:var(--gre-gold);
-      pointer-events:none;
-    }
-
-    /* ===== DIVIDER ===== */
     #glory-rehab-expert-section .gre-divider{
-      position:relative;
-      z-index:2;
-      width:60%;
+      width:78%;
       height:0.16cqw;
-      margin:0.4cqw auto 0;
-      background:#dedbd6;
+      margin:0.6cqw auto 0;
+      background:#c9c7c4;
     }
 
-    /* ===== CREDS ===== */
     #glory-rehab-expert-section .gre-creds{
-      position:relative;
-      z-index:2;
       text-align:center;
-      padding-right:4.4cqw;
     }
 
     #glory-rehab-expert-section .gre-creds p{
       margin:0;
-      font-size:4.3cqw;
-      font-weight:500;
-      color:#222;
-      letter-spacing:-0.03em;
-      line-height:1.5;
+      font-size:4cqw;
+      font-weight:700;
+      color:#2b2a28;
+      letter-spacing:-0.01em;
+      line-height:1.6;
     }
 
-    /* ===== CLOSING ===== */
     #glory-rehab-expert-section .gre-closing{
-      position:relative;
-      z-index:2;
       text-align:center;
-      margin-top:0.2cqw;
-      padding-right:4.4cqw;
+      margin-top:0.6cqw;
+    }
+
+    #glory-rehab-expert-section .gre-closing .gre-dots{
+      justify-content:center;
+      margin:0 0 0.4cqw 0;
     }
 
     #glory-rehab-expert-section .gre-closing p{
       margin:0;
-      font-size:5.7cqw;
+      font-size:4.2cqw;
       font-weight:800;
       color:var(--gre-dark);
-      letter-spacing:-0.04em;
-      line-height:1.2;
+      letter-spacing:-0.02em;
+      line-height:1.36;
     }
 
-    #glory-rehab-expert-section .gre-closing p + p{
-      margin-top:.45cqw;
-    }
-
-    #glory-rehab-expert-section .gre-closing .gre-gold-text{
-      color:#c78f15;
+    #glory-rehab-expert-section .gre-closing b{
+      color:var(--gre-gold);
       font-weight:800;
     }
 
-    /* ===== ANIMATION ===== */
     #glory-rehab-expert-section.gre-js .gre-reveal{
       opacity:0;
       will-change:transform,opacity;
@@ -2104,20 +1878,33 @@ position: relative;
   </div>
 
   <div class="gre-body">
-    <div class="gre-card gre-naver-card gre-reveal gre-left" style="--d:.25s">
-      <div class="gre-naver-frame">
+    <div class="gre-card gre-yt-card gre-reveal gre-left" style="--d:.25s">
+      <div class="gre-yt-frame">
         <iframe
-          class="gre-naver-iframe"
+          class="gre-yt-iframe"
           width="393"
           height="699"
-          title="NAVER Clip"
+          title="YouTube Shorts"
           src="about:blank"
-          data-src="https://m.naver.com//shorts/?serviceType=NTV&mediaId=DCE053EA6AF904CF357ABBC72B7A66561CB9&recType=AiRS&panelType=sdk_ntv&entryPoint=https%3A%2F%2Ftv.naver.com&adUnitId=ntv_shortformviewer_web&viewerInfo=ntv_shortformviewer_web&embed=true&sdkTargetId=PLAYER-SDK-715943-316445&theme=light&viewMode=pc&oembed=true"
+          data-video-id="oHGP4IRyCpI"
           frameborder="0"
           loading="eager"
           allow="autoplay; fullscreen; encrypted-media; clipboard-write; web-share; picture-in-picture"
           allowfullscreen>
         </iframe>
+
+        <div class="gre-yt-block" aria-hidden="true"></div>
+
+        <div class="gre-yt-controls">
+          <button type="button" class="gre-yt-ctrl gre-yt-sound is-muted" aria-label="소리 켜기">
+            <svg class="gre-ic gre-ic-muted" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.25-3.9v2.07l2.2 2.2c.03-.12.05-.25.05-.37zm2.5 0c0 .94-.2 1.83-.54 2.64l1.51 1.51A8.94 8.94 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 0 0 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3z"/>
+            </svg>
+            <svg class="gre-ic gre-ic-on" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.25-3.9v7.79A4.5 4.5 0 0 0 16.5 12zM14 3.23v2.06a7.001 7.001 0 0 1 0 13.42v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -2134,7 +1921,7 @@ position: relative;
         <div class="gre-point gre-reveal gre-rightin" style="--d:.48s">
           <span class="gre-badge">Point 2</span>
           <div class="gre-point-row">
-            <span class="gre-point-text">연간 <span class="gre-word-dots">1천건</span> 접수</span>
+            <span class="gre-point-text">연간 1천건 접수</span>
             <span class="gre-tick"></span>
           </div>
         </div>
@@ -2148,22 +1935,17 @@ position: relative;
         </div>
       </div>
 
-      <div class="gre-divider gre-reveal gre-fade" style="--d:.72s"></div>
+      <div class="gre-divider gre-reveal gre-fade" style="--d:.7s"></div>
 
-      <div class="gre-creds gre-reveal gre-up" style="--d:.8s">
+      <div class="gre-creds gre-reveal gre-up" style="--d:.78s">
         <p>법학대학원 석사</p>
         <p>공인 신용관리사</p>
         <p>서류발급대행사</p>
       </div>
 
-      <div class="gre-closing gre-reveal gre-up" style="--d:.92s">
-        <p>
-          진짜 
-          <span class="gre-syllable-dots gre-gold-text">
-            <span>전</span><span>문</span><span>가</span>
-          </span>로만
-        </p>
-        <p><span class="gre-gold-text">변호사-실무자</span> 구성</p>
+      <div class="gre-closing gre-reveal gre-up" style="--d:.9s">
+        <p>진짜 <b>전문가</b>로만</p>
+        <p><b>변호사-실무자</b> 구성</p>
       </div>
     </div>
   </div>
@@ -2175,81 +1957,192 @@ position: relative;
 
       root.classList.add('gre-js');
 
-      var iframe = root.querySelector('.gre-naver-iframe');
+      /*
+        유튜브 숏폼 무음 자동재생 (IFrame Player API 사용)
+        - 브라우저 정책상 소리 있는 자동재생은 차단되므로 mute 상태로 시작 (필수)
+        - 재생목록(playlist) 파라미터를 쓰지 않으므로 가운데 이전/다음 버튼이 뜨지 않음
+        - 무한반복은 onStateChange(ENDED) 이벤트에서 처음으로 되감아 직접 처리
+        - controls=0 + 영상 위 투명 차단막으로 일시정지/컨트롤 노출을 막음
+        - iOS / Android 인라인 재생을 위한 playsinline=1
+      */
+      var iframe = root.querySelector('.gre-yt-iframe');
+      var frame = root.querySelector('.gre-yt-frame');
+      var soundBtn = root.querySelector('.gre-yt-sound');
 
-      function buildNaverAutoplayUrl(){
-        if(!iframe) return '';
+      var videoId = iframe ? (iframe.getAttribute('data-video-id') || '') : '';
+      var ytPlayer = null;
 
-        var baseSrc = iframe.getAttribute('data-src') || iframe.getAttribute('src') || '';
-
-        try{
-          var url = new URL(baseSrc, window.location.href);
-
-          url.searchParams.set('embed', 'true');
-          url.searchParams.set('autoplay', '1');
-          url.searchParams.set('autoPlay', '1');
-          url.searchParams.set('autoplayMuted', '1');
-          url.searchParams.set('muted', '1');
-          url.searchParams.set('mute', '1');
-          url.searchParams.set('isMuted', '1');
-          url.searchParams.set('volume', '0');
-          url.searchParams.set('playsinline', '1');
-          url.searchParams.set('playsInline', '1');
-          url.searchParams.set('webkit-playsinline', '1');
-          url.searchParams.set('loop', '1');
-          url.searchParams.set('playlist', '0');
-          url.searchParams.set('recommend', '0');
-          url.searchParams.set('recType', 'none');
-
-          return url.toString();
-        }catch(e){
-          return baseSrc;
-        }
+      function revealVideo(){
+        if(frame) frame.classList.add('gre-yt-playing');
       }
 
-      function startNaverAutoplay(){
-        if(!iframe) return;
+      function buildYoutubeUrl(){
+        if(!videoId) return '';
 
-        var autoplaySrc = buildNaverAutoplayUrl();
+        var origin = '';
+        if(location.protocol === 'http:' || location.protocol === 'https:'){
+          origin = '&origin=' + encodeURIComponent(location.origin);
+        }
 
+        var params = [
+          'autoplay=1',
+          'mute=1',
+          'controls=0',
+          'playsinline=1',
+          'modestbranding=1',
+          'rel=0',
+          'fs=0',
+          'disablekb=1',
+          'iv_load_policy=3',
+          'enablejsapi=1'
+        ].join('&');
+
+        return 'https://www.youtube.com/embed/' + videoId + '?' + params + origin;
+      }
+
+      function resetSoundButton(){
+        if(!soundBtn) return;
+        soundBtn.classList.add('is-muted');
+        soundBtn.setAttribute('aria-label', '소리 켜기');
+      }
+
+      /* iframe src 주입 (API 로드 전에 먼저 설정) */
+      if(iframe && videoId){
+        iframe.id = iframe.id || 'gre-yt-player';
         iframe.setAttribute(
           'allow',
           'autoplay; fullscreen; encrypted-media; clipboard-write; web-share; picture-in-picture'
         );
-
         iframe.setAttribute('loading', 'eager');
+        if(iframe.getAttribute('src') !== buildYoutubeUrl()){
+          iframe.setAttribute('src', buildYoutubeUrl());
+        }
+        resetSoundButton();
+      }
 
-        if(iframe.getAttribute('src') !== autoplaySrc){
-          iframe.setAttribute('src', autoplaySrc);
+      /* ===== YouTube IFrame API 로드 ===== */
+      function loadYouTubeAPI(cb){
+        if(window.YT && window.YT.Player){ cb(); return; }
+
+        window.__greYTCallbacks = window.__greYTCallbacks || [];
+        window.__greYTCallbacks.push(cb);
+
+        var prevReady = window.onYouTubeIframeAPIReady;
+        window.onYouTubeIframeAPIReady = function(){
+          if(typeof prevReady === 'function'){ try{ prevReady(); }catch(e){} }
+          var list = window.__greYTCallbacks || [];
+          window.__greYTCallbacks = [];
+          for(var i=0;i<list.length;i++){ try{ list[i](); }catch(e){} }
+        };
+
+        if(!document.getElementById('gre-yt-api-script')){
+          var s = document.createElement('script');
+          s.id = 'gre-yt-api-script';
+          s.src = 'https://www.youtube.com/iframe_api';
+          (document.head || document.body).appendChild(s);
         }
       }
 
-      startNaverAutoplay();
+      function initPlayer(){
+        if(!iframe || !videoId || !window.YT || !window.YT.Player) return;
 
-      window.addEventListener('pageshow', function(){
-        startNaverAutoplay();
-      });
+        ytPlayer = new YT.Player(iframe, {
+          events: {
+            onReady: function(e){
+              /*
+                화면에 보이지 않아도 페이지 접속 즉시 강제 재생.
+                브라우저는 화면 밖 영상의 'autoplay'를 미루는 경우가 있으므로
+                playVideo()를 즉시·반복 호출해 재생을 강제로 시작시킨다.
+              */
+              try{ e.target.mute(); e.target.playVideo(); }catch(err){}
+
+              var tries = 0;
+              var forceTimer = setInterval(function(){
+                tries++;
+                try{ e.target.mute(); e.target.playVideo(); }catch(err){}
+
+                var st = -1;
+                try{ st = e.target.getPlayerState(); }catch(err){}
+
+                if(st === YT.PlayerState.PLAYING || tries >= 15){
+                  clearInterval(forceTimer);
+                }
+              }, 350);
+
+              /* 이벤트가 누락돼도 일정 시간 뒤 영상이 보이도록 안전장치 */
+              setTimeout(revealVideo, 1500);
+            },
+            onStateChange: function(e){
+              /* 실제 재생이 시작되면 그때 영상을 노출 (로딩 컨트롤 가림) */
+              if(e.data === YT.PlayerState.PLAYING){
+                revealVideo();
+              }
+              /* 영상이 끝나면 처음으로 되감아 무한반복 */
+              if(e.data === YT.PlayerState.ENDED){
+                try{ e.target.seekTo(0, true); e.target.playVideo(); }catch(err){}
+              }
+            }
+          }
+        });
+      }
+
+      if(iframe && videoId){
+        loadYouTubeAPI(initPlayer);
+        /* API가 끝내 로드되지 않아도 영상은 보이도록 (URL autoplay로 재생됨) */
+        setTimeout(revealVideo, 2500);
+      }
+
+      /* postMessage 폴백 (player 객체가 아직 없을 때 대비) */
+      function ytCommand(func, args){
+        if(!iframe || !iframe.contentWindow) return;
+        try{
+          iframe.contentWindow.postMessage(JSON.stringify({
+            event: 'command', func: func, args: args || []
+          }), '*');
+        }catch(e){}
+      }
+
+      /* ===== 소리 켜기 / 끄기 버튼 ===== */
+      if(soundBtn){
+        soundBtn.addEventListener('click', function(){
+          var isMuted = soundBtn.classList.contains('is-muted');
+
+          if(isMuted){
+            if(ytPlayer && ytPlayer.unMute){
+              try{ ytPlayer.unMute(); ytPlayer.setVolume(100); ytPlayer.playVideo(); }catch(e){}
+            }else{
+              ytCommand('unMute'); ytCommand('setVolume', [100]); ytCommand('playVideo');
+            }
+            soundBtn.classList.remove('is-muted');
+            soundBtn.setAttribute('aria-label', '소리 끄기');
+          }else{
+            if(ytPlayer && ytPlayer.mute){
+              try{ ytPlayer.mute(); }catch(e){}
+            }else{
+              ytCommand('mute');
+            }
+            soundBtn.classList.add('is-muted');
+            soundBtn.setAttribute('aria-label', '소리 켜기');
+          }
+        });
+      }
+
+      /* 뒤로가기 / 캐시 복원(bfcache) / 탭 복귀 시 재생 유지 */
+      function resumePlayback(){
+        if(ytPlayer && ytPlayer.playVideo){
+          try{ ytPlayer.playVideo(); }catch(e){}
+        }else{
+          ytCommand('playVideo');
+        }
+      }
+
+      window.addEventListener('pageshow', resumePlayback);
 
       document.addEventListener('visibilitychange', function(){
-        if(document.visibilityState === 'visible'){
-          startNaverAutoplay();
-        }
+        if(document.visibilityState === 'visible'){ resumePlayback(); }
       });
 
-      var frameWrap = root.querySelector('.gre-naver-frame');
-
-      if(frameWrap){
-        frameWrap.addEventListener('wheel', function(e){
-          e.stopPropagation();
-
-          window.scrollBy({
-            top:e.deltaY,
-            left:0,
-            behavior:'auto'
-          });
-        }, {passive:true});
-      }
-
+      /* ===== 등장 애니메이션 ===== */
       var items = root.querySelectorAll('.gre-reveal');
 
       if(!('IntersectionObserver' in window)){
@@ -4226,5 +4119,6 @@ position: relative;
     </span>
   </a>
 </section>
+
 
 </html>
