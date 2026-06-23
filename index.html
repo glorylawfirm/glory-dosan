@@ -2762,21 +2762,22 @@ margin: 4cqw 2cqw 0;
       margin:0 auto;
       font-family:'Pretendard','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',Arial,sans-serif;
       overflow:hidden;
-
-      /* 첨부 이미지 톤: 밝은 그레이 + 은은한 사선 패턴 */
       background:
-        repeating-linear-gradient(135deg, rgb(233 232 229) 0 1px, transparent 1px 44px), linear-gradient(180deg, #ebe9e7 0%, #efeeec 100%);
+        repeating-linear-gradient(135deg, rgb(233 232 229) 0 1px, transparent 1px 44px),
+        linear-gradient(180deg, #ebe9e7 0%, #efeeec 100%);
       color:#242424;
       border:1px solid rgba(30,30,30,.08);
       box-shadow:0 20px 50px rgba(30,30,30,.08);
       box-sizing:border-box;
     }
 
-    #glory-review-rolling *{box-sizing:border-box;}
+    #glory-review-rolling *{
+      box-sizing:border-box;
+    }
 
     #glory-review-rolling .grv-wrap{
       position:relative;
-      padding:54px 0 44px;
+      padding:36px 0 44px;
       overflow:hidden;
     }
 
@@ -2795,46 +2796,47 @@ margin: 4cqw 2cqw 0;
       position:relative;
       z-index:2;
       text-align:center;
-      padding:0 22px;
+      padding:0 18px;
       margin-bottom:32px;
       animation:grvFadeDown .8s ease both;
     }
 
-    /* 첨부 이미지 스타일 제목 */
+    /* ===== 첨부 이미지 스타일 제목 박스 ===== */
     #glory-review-rolling .grv-title{
-      margin:0;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:8px;
-      line-height:1.05;
-      letter-spacing:-.075em;
+      width:100%;
+      max-width:730px;
+      margin:0 auto;
+      padding:18px 14px 20px;
+      border:2px solid #1f1f1f;
+      border-radius:9px;
+      background:
+        linear-gradient(180deg,#ffffff 0%,#fafafa 56%,#f1f1ef 100%);
+      box-shadow:
+        0 4px 3px rgba(0,0,0,.35),
+        inset 0 2px 4px rgba(255,255,255,.95),
+        inset 0 -2px 4px rgba(0,0,0,.08);
       text-align:center;
+      line-height:1.18;
+      letter-spacing:-0.075em;
     }
 
-    #glory-review-rolling .grv-title .grv-title-black{
+    #glory-review-rolling .grv-title-line{
       display:block;
-      color:#262626;
-      font-size:clamp(36px,7.4vw,52px);
+      margin:0;
+      font-size:clamp(28px,6.4vw,52px);
       font-weight:950;
-      line-height:1.05;
+      color:#050505;
+      line-height:1.18;
+      word-break:keep-all;
     }
 
-    #glory-review-rolling .grv-title .grv-title-gold{
-      display:block;
-      color:#e2a22e;
-      font-size:clamp(44px,9vw,78px);
-      font-weight:950;
-      line-height:1.02;
+    #glory-review-rolling .grv-title-line + .grv-title-line{
+      margin-top:4px;
     }
 
-    #glory-review-rolling .grv-head p{
-      margin:22px 0 0;
-      color:#4b4b4b;
-      font-size:clamp(15px,3.2vw,19px);
-      line-height:1.7;
-      font-weight:650;
-      letter-spacing:-.045em;
+    #glory-review-rolling .grv-title-gold{
+      color:#c58b12;
+      font-weight:950;
     }
 
     #glory-review-rolling .grv-slider{
@@ -2869,7 +2871,6 @@ margin: 4cqw 2cqw 0;
       border-radius:24px;
       background:rgba(255,255,255,.96);
       border:1px solid rgba(30,30,30,.10);
-      /* box-shadow:0 18px 38px rgba(30,30,30,.09); */
       position:relative;
       overflow:hidden;
     }
@@ -2905,26 +2906,7 @@ margin: 4cqw 2cqw 0;
       -webkit-user-select:none;
     }
 
-    #glory-review-rolling .grv-caption{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      margin-top:14px;
-      padding:0 4px;
-      color:#6b7280;
-      font-size:13px;
-      font-weight:700;
-      letter-spacing:-.04em;
-    }
-
-    #glory-review-rolling .grv-place{
-      color:#242424;
-      font-weight:900;
-    }
-
     #glory-review-rolling .grv-nav{
-      
       position:relative;
       z-index:3;
       display:flex;
@@ -2940,13 +2922,13 @@ margin: 4cqw 2cqw 0;
       height:46px;
       border-radius:50%;
       border:1px solid rgba(30,30,30,.12);
-      /* background:#fff; */
       color:#242424;
       font-size:26px;
       font-weight:300;
       cursor:pointer;
       box-shadow:0 10px 24px rgba(30,30,30,.08);
       transition:.25s ease;
+      background:rgba(255,255,255,.45);
     }
 
     #glory-review-rolling .grv-btn:hover{
@@ -2960,16 +2942,21 @@ margin: 4cqw 2cqw 0;
       display:flex;
       align-items:center;
       justify-content:center;
+      flex-wrap:wrap;
       gap:8px;
+      max-width:260px;
     }
 
     #glory-review-rolling .grv-dot{
       width:8px;
       height:8px;
+      padding:0;
+      border:0;
       border-radius:50%;
       background:rgba(30,30,30,.22);
       transition:.25s ease;
       cursor:pointer;
+      display:block;
     }
 
     #glory-review-rolling .grv-dot.is-active{
@@ -2978,35 +2965,34 @@ margin: 4cqw 2cqw 0;
       background:#e2a22e;
     }
 
-    @keyframes grvFadeUp{
-      from{opacity:0;transform:translateY(28px);}
-      to{opacity:1;transform:translateY(0);}
-    }
-
     @keyframes grvFadeDown{
-      from{opacity:0;transform:translateY(-18px);}
-      to{opacity:1;transform:translateY(0);}
+      from{
+        opacity:0;
+        transform:translateY(-18px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
     }
 
     @media(max-width:560px){
       #glory-review-rolling .grv-wrap{
-        padding:40px 0 36px;
+        padding:28px 0 36px;
+      }
+
+      #glory-review-rolling .grv-head{
+        padding:0 14px;
+        margin-bottom:28px;
       }
 
       #glory-review-rolling .grv-title{
-        gap:6px;
+        padding:15px 10px 17px;
+        border-radius:8px;
       }
 
-      #glory-review-rolling .grv-title .grv-title-black{
-        font-size:clamp(31px,9vw,44px);
-      }
-
-      #glory-review-rolling .grv-title .grv-title-gold{
-        font-size:clamp(39px,11vw,46px);
-      }
-
-      #glory-review-rolling .grv-head p{
-        margin-top:18px;
+      #glory-review-rolling .grv-title-line{
+        font-size:clamp(25px,8vw,40px);
       }
 
       #glory-review-rolling .grv-track{
@@ -3024,10 +3010,9 @@ margin: 4cqw 2cqw 0;
         border-radius:16px;
       }
 
-      #glory-review-rolling .grv-caption{
-        flex-direction:column;
-        align-items:flex-start;
-        font-size:12px;
+      #glory-review-rolling .grv-dots{
+        max-width:190px;
+        gap:7px;
       }
     }
   </style>
@@ -3035,10 +3020,13 @@ margin: 4cqw 2cqw 0;
   <div class="grv-wrap">
     <div class="grv-head">
       <h2 class="grv-title">
-        <span class="grv-title-black">실제 수임고객</span>
-        <span class="grv-title-gold">리뷰 사례</span>
+        <span class="grv-title-line">
+        실제 수임 고객
+        </span>
+        <span class="grv-title-line">
+          <span class="grv-title-gold">리뷰 사례</span>
+        </span>
       </h2>
-      <br><br>
     </div>
 
     <div class="grv-slider" id="grvSlider">
@@ -3088,13 +3076,12 @@ margin: 4cqw 2cqw 0;
     </div>
 
     <div class="grv-nav">
-      <button class="grv-btn" type="button" id="grvPrev">‹</button>
-      <div class="grv-dots" id="grvDots">
-        <span class="grv-dot is-active"></span>
-        <span class="grv-dot"></span>
-        <span class="grv-dot"></span>
-      </div>
-      <button class="grv-btn" type="button" id="grvNext">›</button>
+      <button class="grv-btn" type="button" id="grvPrev" aria-label="이전 리뷰">‹</button>
+
+      <!-- 리뷰 개수만큼 JS에서 포인트 자동 생성 -->
+      <div class="grv-dots" id="grvDots"></div>
+
+      <button class="grv-btn" type="button" id="grvNext" aria-label="다음 리뷰">›</button>
     </div>
   </div>
 
@@ -3108,8 +3095,9 @@ margin: 4cqw 2cqw 0;
       const cards = Array.from(section.querySelectorAll('.grv-card'));
       const prev = section.querySelector('#grvPrev');
       const next = section.querySelector('#grvNext');
-      const dots = Array.from(section.querySelectorAll('.grv-dot'));
+      const dotsWrap = section.querySelector('#grvDots');
 
+      let dots = [];
       let index = 0;
       let startX = 0;
       let startY = 0;
@@ -3117,6 +3105,31 @@ margin: 4cqw 2cqw 0;
       let prevTranslate = 0;
       let isDragging = false;
       let isHorizontalDrag = false;
+
+      function renderDots(){
+        if(!dotsWrap) return;
+
+        dotsWrap.innerHTML = '';
+
+        cards.forEach(function(card, i){
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'grv-dot';
+          dot.setAttribute('aria-label', (i + 1) + '번 리뷰 보기');
+
+          if(i === 0){
+            dot.classList.add('is-active');
+          }
+
+          dot.addEventListener('click', function(){
+            moveTo(i, true);
+          });
+
+          dotsWrap.appendChild(dot);
+        });
+
+        dots = Array.from(dotsWrap.querySelectorAll('.grv-dot'));
+      }
 
       function getStep(){
         if(!cards[0]) return 0;
@@ -3126,7 +3139,7 @@ margin: 4cqw 2cqw 0;
       }
 
       function maxIndex(){
-        return cards.length - 1;
+        return Math.max(cards.length - 1, 0);
       }
 
       function setDots(){
@@ -3142,6 +3155,7 @@ margin: 4cqw 2cqw 0;
 
         track.style.transition = animate ? 'transform .45s cubic-bezier(.22,.61,.36,1)' : 'none';
         track.style.transform = 'translate3d(' + currentTranslate + 'px,0,0)';
+
         setDots();
       }
 
@@ -3167,6 +3181,8 @@ margin: 4cqw 2cqw 0;
       }
 
       function dragStart(e){
+        if(cards.length <= 1) return;
+
         const point = getPoint(e);
 
         isDragging = true;
@@ -3240,12 +3256,6 @@ margin: 4cqw 2cqw 0;
         moveTo(index + 1, true);
       });
 
-      dots.forEach(function(dot, i){
-        dot.addEventListener('click', function(){
-          moveTo(i, true);
-        });
-      });
-
       slider.addEventListener('touchstart', dragStart, {passive:true});
       slider.addEventListener('touchmove', dragMove, {passive:false});
       slider.addEventListener('touchend', dragEnd, {passive:true});
@@ -3259,6 +3269,7 @@ margin: 4cqw 2cqw 0;
         moveTo(index, false);
       });
 
+      renderDots();
       moveTo(0, false);
     })();
   </script>
