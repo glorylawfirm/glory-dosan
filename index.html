@@ -4449,6 +4449,8 @@ margin: 4cqw 2cqw 0;
   </div>
 </footer>
 
+
+
 <style>
   .glory-footer {
     width: 100%;
@@ -4520,114 +4522,79 @@ margin: 4cqw 2cqw 0;
   <style>
     #kakao-floating-menu {
       position: fixed;
-      right: max(16px, calc((100vw - 840px) / 2 + 16px));
-      bottom: 24px;
+      right: max(14px, calc((100vw - 840px) / 2 + 14px));
+      bottom: calc(22px + env(safe-area-inset-bottom));
       z-index: 99999;
       font-family: 'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
-      animation: kfmFadeInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation: kfmFadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    #kakao-floating-menu,
+    #kakao-floating-menu * {
+      box-sizing: border-box;
     }
 
     #kakao-floating-menu .kfm-link {
       position: relative;
       display: inline-flex;
       align-items: center;
-      justify-content: flex-start;
-      width: 96px;
-      height: 96px;
-      padding: 0;
+      justify-content: center;
+      gap: 8px;
+      width: 152px;
+      height: 56px;
+      padding: 0 20px 0 12px;
       border-radius: 999px;
-      background: transparent;
+      background: #fee500;
       color: #191919;
       text-decoration: none;
-      overflow: hidden;
       border: 0;
-      box-shadow: none;
       outline: none;
+      overflow: hidden;
       -webkit-tap-highlight-color: transparent;
+      box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.18),
+        0 3px 8px rgba(0, 0, 0, 0.10);
       transition:
-        width 0.38s cubic-bezier(0.22, 1, 0.36, 1),
-        background 0.28s ease,
-        transform 0.28s ease;
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        background 0.28s ease;
     }
 
     #kakao-floating-menu .kfm-icon {
-      position: relative;
-      z-index: 2;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      flex: 0 0 96px;
-      width: 96px;
-      height: 96px;
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-      overflow: visible;
+      background: #fee500;
     }
 
-    #kakao-floating-menu .kfm-icon-img {
+    #kakao-floating-menu .kfm-icon svg {
       display: block;
-      width: 96px;
-      height: 96px;
-      object-fit: contain;
-      border: 0;
-      box-shadow: none;
-      outline: none;
-      filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.18));
+      width: 42px;
+      height: 42px;
+      filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.12));
       animation: kfmIconGlow 2.6s ease-in-out infinite;
-      transition:
-        transform 0.28s ease,
-        filter 0.28s ease;
-    }
-
-    #kakao-floating-menu .kfm-text {
-      position: relative;
-      z-index: 1;
-      display: inline-flex;
-      align-items: center;
-      max-width: 0;
-      opacity: 0;
-      overflow: hidden;
-      white-space: nowrap;
-      transform: translateX(-12px);
-      transition:
-        max-width 0.38s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 0.22s ease,
-        transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     #kakao-floating-menu .kfm-label {
       display: inline-block;
-      padding: 0 32px 0 4px;
-      font-size: 26px;
-      font-weight: 950;
+      font-size: 20px;
+      font-weight: 900;
       line-height: 1;
-      letter-spacing: -0.065em;
+      letter-spacing: -0.055em;
       color: #191919;
+      white-space: nowrap;
     }
 
     #kakao-floating-menu .kfm-link:hover,
     #kakao-floating-menu .kfm-link:focus-visible {
-      width: 218px;
-      height: 96px;
-      background: #fee500;
       transform: translateY(-4px);
-    }
-
-    #kakao-floating-menu .kfm-link:hover .kfm-icon-img,
-    #kakao-floating-menu .kfm-link:focus-visible .kfm-icon-img {
-      transform: scale(0.9);
-      filter:
-        drop-shadow(0 0 12px rgba(254, 229, 0, 0.82))
-        drop-shadow(0 8px 14px rgba(0, 0, 0, 0.15));
-    }
-
-    #kakao-floating-menu .kfm-link:hover .kfm-text,
-    #kakao-floating-menu .kfm-link:focus-visible .kfm-text {
-      max-width: 122px;
-      opacity: 1;
-      transform: translateX(0);
+      box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.22),
+        0 4px 10px rgba(0, 0, 0, 0.12);
     }
 
     #kakao-floating-menu .kfm-link:active {
@@ -4637,7 +4604,7 @@ margin: 4cqw 2cqw 0;
     @keyframes kfmFadeInUp {
       0% {
         opacity: 0;
-        transform: translateY(18px) scale(0.94);
+        transform: translateY(16px) scale(0.96);
       }
       100% {
         opacity: 1;
@@ -4649,51 +4616,45 @@ margin: 4cqw 2cqw 0;
       0%, 100% {
         filter:
           drop-shadow(0 0 0 rgba(254, 229, 0, 0))
-          drop-shadow(0 10px 16px rgba(0, 0, 0, 0.18));
+          drop-shadow(0 3px 5px rgba(0, 0, 0, 0.12));
       }
       50% {
         filter:
-          drop-shadow(0 0 14px rgba(254, 229, 0, 0.78))
-          drop-shadow(0 12px 18px rgba(0, 0, 0, 0.18));
+          drop-shadow(0 0 10px rgba(255, 238, 70, 0.85))
+          drop-shadow(0 4px 6px rgba(0, 0, 0, 0.14));
       }
     }
 
     @media (max-width: 640px) {
       #kakao-floating-menu {
         right: max(12px, calc((100vw - 840px) / 2 + 12px));
-        bottom: 18px;
+        bottom: calc(18px + env(safe-area-inset-bottom));
       }
 
       #kakao-floating-menu .kfm-link {
-        width: 86px;
-        height: 86px;
+        width: 132px;
+        height: 50px;
+        gap: 6px;
+        padding: 0 16px 0 10px;
+        box-shadow:
+          0 8px 20px rgba(0, 0, 0, 0.17),
+          0 3px 7px rgba(0, 0, 0, 0.10);
       }
 
       #kakao-floating-menu .kfm-icon {
-        flex-basis: 86px;
-        width: 86px;
-        height: 86px;
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
       }
 
-      #kakao-floating-menu .kfm-icon-img {
-        width: 86px;
-        height: 86px;
-      }
-
-      #kakao-floating-menu .kfm-link:hover,
-      #kakao-floating-menu .kfm-link:focus-visible {
-        width: 192px;
-        height: 86px;
-      }
-
-      #kakao-floating-menu .kfm-link:hover .kfm-text,
-      #kakao-floating-menu .kfm-link:focus-visible .kfm-text {
-        max-width: 106px;
+      #kakao-floating-menu .kfm-icon svg {
+        width: 36px;
+        height: 36px;
       }
 
       #kakao-floating-menu .kfm-label {
-        padding: 0 26px 0 2px;
-        font-size: 23px;
+        font-size: 17px;
+        letter-spacing: -0.06em;
       }
     }
   </style>
@@ -4703,22 +4664,19 @@ margin: 4cqw 2cqw 0;
     href="http://pf.kakao.com/_rTJxbn/chat"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="카카오톡 톡상담 바로가기"
+    aria-label="카카오톡 상담 바로가기"
   >
-    <span class="kfm-icon">
-      <img
-        class="kfm-icon-img"
-        src="data:image/svg+xml,%3Csvg width='96' height='96' viewBox='0 0 96 96' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='48' cy='48' r='39' fill='%23FEE500'/%3E%3Cellipse cx='48' cy='43.5' rx='21.5' ry='15.5' fill='%23000000'/%3E%3Cpath d='M38.8 53.8L35.2 63.2C34.9 64 35.8 64.7 36.5 64.2L48.8 56.3C43 56.2 40 55 38.8 53.8Z' fill='%23000000'/%3E%3C/svg%3E"
-        alt="카카오톡 상담"
-      />
+    <span class="kfm-icon" aria-hidden="true">
+      <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="48" cy="48" r="43" fill="#FEE500"/>
+        <ellipse cx="48" cy="43.5" rx="23" ry="16.5" fill="#000000"/>
+        <path d="M38.5 54.5L34.9 64.1C34.6 64.9 35.5 65.6 36.2 65.1L49.4 56.8C44.3 56.8 40.8 55.9 38.5 54.5Z" fill="#000000"/>
+      </svg>
     </span>
 
-    <span class="kfm-text">
-      <span class="kfm-label">톡상담</span>
-    </span>
+    <span class="kfm-label">톡상담</span>
   </a>
 </section>
-
 
   <section id="legalDebtAdjustToastSection" aria-label="채무 조정 확정 알림 토스트 섹션">
   <div class="ldats-toast" aria-live="polite" aria-atomic="true">
