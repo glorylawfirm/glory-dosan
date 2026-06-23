@@ -1232,7 +1232,7 @@ margin: 4cqw 2cqw 0;
 
     /* ===== CONTROLS ===== */
     #glory-case-slider .gcs-controls{
-      display:flex;
+      display:none;
       align-items:center;
       justify-content:center;
       gap:3cqw;
@@ -1736,15 +1736,15 @@ margin: 4cqw 2cqw 0;
 <section id="glory-rehab-expert-section">
   <style>
     #glory-rehab-expert-section{
-      --gre-gold:#f2b12c;
-      --gre-gold-soft:#f5bf5a;
-      --gre-yellow:#f4c33f;
-      --gre-dark:#111111;
-      --gre-ink:#222222;
-      --gre-gray:#5f5d5a;
-      --gre-line:#171717;
-      --gre-bg-a:#f3f2f0;
-      --gre-bg-b:#e6e4e1;
+      --gre-gold:#c58b12;
+      --gre-gold-2:#e0ad37;
+      --gre-dark:#070707;
+      --gre-ink:#171717;
+      --gre-line:#c89938;
+      --gre-bg-a:#f5f5f4;
+      --gre-bg-b:#dededc;
+
+      --gre-bg-image:none;
 
       container-type:inline-size;
       position:relative;
@@ -1753,11 +1753,13 @@ margin: 4cqw 2cqw 0;
       width:100%;
       max-width:840px;
       margin:0 auto;
-      padding:5cqw 1cqw 4cqw 2cqw;
-      background-image:url('./img/back-1.jpg');
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
+      padding:2.2cqw 2.8cqw 2.2cqw;
+      background:
+        linear-gradient(135deg,rgba(245,245,244,.94) 0%,rgba(224,224,222,.94) 100%),
+        var(--gre-bg-image);
+      background-size:cover, cover;
+      background-position:center center, center center;
+      background-repeat:no-repeat, no-repeat;
       font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
       color:var(--gre-ink);
       line-height:1.3;
@@ -1765,75 +1767,102 @@ margin: 4cqw 2cqw 0;
       text-rendering:optimizeLegibility;
     }
 
+    #glory-rehab-expert-section::before,
+    #glory-rehab-expert-section::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    #glory-rehab-expert-section::before{
+      background:
+        linear-gradient(135deg,transparent 0 43%,rgba(255,255,255,.42) 43% 48%,transparent 48% 100%) 0 0 / 13cqw 13cqw,
+        linear-gradient(45deg,transparent 0 43%,rgba(150,150,150,.12) 43% 48%,transparent 48% 100%) 2cqw 1cqw / 15cqw 15cqw;
+      opacity:.7;
+    }
+
+    #glory-rehab-expert-section::after{
+      background:
+        radial-gradient(circle at 12% 18%,rgba(255,255,255,.75) 0 0.5cqw,transparent .55cqw),
+        radial-gradient(circle at 84% 78%,rgba(255,255,255,.75) 0 0.5cqw,transparent .55cqw);
+      opacity:.4;
+    }
+
     #glory-rehab-expert-section *{
       box-sizing:border-box;
     }
 
-    /* ===== HEAD ===== */
     #glory-rehab-expert-section .gre-head{
       position:relative;
       z-index:2;
-      margin:0 0 3.8cqw;
+      margin:0 0 1.4cqw;
+      padding:.8cqw .9cqw;
+      border:0.28cqw solid #1d1d1d;
+      border-radius:1cqw;
+      background:
+        linear-gradient(180deg,#ffffff 0%,#f9f9f8 56%,#f2f2f1 100%);
+      box-shadow:
+        0 .45cqw .15cqw rgba(0,0,0,.33),
+        inset 0 .18cqw .4cqw rgba(255,255,255,.95),
+        inset 0 -.2cqw .35cqw rgba(0,0,0,.07);
     }
 
-    #glory-rehab-expert-section .gre-head-1,
-    #glory-rehab-expert-section .gre-head-2{
-      font-family:'GMarketSans-400';
+    #glory-rehab-expert-section .gre-title{
       margin:0;
-      font-size:6cqw;
-      font-weight:400;
-      letter-spacing:-0.03em;
-      line-height:1.16;
-      padding-left:10px;
+      text-align:center;
+      font-size:4.9cqw;
+      font-weight:950;
+      letter-spacing:-0.075em;
+      line-height:1.22;
+      color:#050505;
+      word-break:keep-all;
     }
 
-    #glory-rehab-expert-section .gre-head-1{
-      color:var(--gre-dark);
+    #glory-rehab-expert-section .gre-title .gre-gold{
+      color:var(--gre-gold);
+      font-weight:950;
     }
 
-    #glory-rehab-expert-section .gre-head-2{
-      color:#ecb229;
-      margin-top:.7cqw;
-    }
-
-    /* ===== BODY ===== */
     #glory-rehab-expert-section .gre-body{
       position:relative;
       z-index:2;
-      display:flex;
-      align-items:flex-start;
-      gap:2.6cqw;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:stretch;
+      gap:.9cqw;
     }
 
-    /* ===== LEFT SHORTFORM ===== */
     #glory-rehab-expert-section .gre-card{
       box-sizing:border-box;
-      flex:0 0 48.5%;
       background:#0c0c0c;
       display:flex;
       flex-direction:column;
       overflow:hidden;
-      box-shadow:0 1.5cqw 4cqw rgba(0,0,0,.18);
+      box-shadow:0 1.2cqw 3.2cqw rgba(0,0,0,.2);
     }
 
-    #glory-rehab-expert-section .gre-naver-card{
+    #glory-rehab-expert-section .gre-yt-card{
       position:relative;
       aspect-ratio:9 / 16;
       align-self:flex-start;
+      width:100%;
       background:#000;
     }
 
-    #glory-rehab-expert-section .gre-naver-frame{
+    #glory-rehab-expert-section .gre-yt-frame{
       position:relative;
       width:100%;
       height:100%;
       overflow:hidden;
       background:#000;
-      overscroll-behavior:contain;
-      touch-action:pan-y;
+      -webkit-user-select:none;
+      user-select:none;
+      -webkit-touch-callout:none;
     }
 
-    #glory-rehab-expert-section .gre-naver-frame iframe{
+    #glory-rehab-expert-section .gre-yt-frame iframe{
       position:absolute;
       inset:0;
       width:100%;
@@ -1842,197 +1871,254 @@ margin: 4cqw 2cqw 0;
       display:block;
       background:#000;
       pointer-events:none;
+      -webkit-user-select:none;
+      user-select:none;
+      opacity:0;
+      transition:opacity .45s ease;
     }
 
-    /* ===== RIGHT CONTENT ===== */
+    #glory-rehab-expert-section .gre-yt-frame.gre-yt-playing iframe{
+      opacity:1;
+    }
+
+    #glory-rehab-expert-section .gre-yt-block{
+      position:absolute;
+      inset:0;
+      z-index:4;
+      background:transparent;
+      pointer-events:auto;
+      cursor:default;
+      -webkit-user-select:none;
+      user-select:none;
+      -webkit-user-drag:none;
+    }
+
+    #glory-rehab-expert-section .gre-yt-controls{
+      position:absolute;
+      top:2.4cqw;
+      left:2.4cqw;
+      z-index:5;
+      display:flex;
+      gap:1.4cqw;
+    }
+
+    #glory-rehab-expert-section .gre-yt-ctrl{
+      width:6cqw;
+      height:6cqw;
+      min-width:34px;
+      min-height:34px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:0;
+      border:0;
+      border-radius:50%;
+      background:rgba(18,18,18,.55);
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+      -webkit-backdrop-filter:blur(2px);
+      backdrop-filter:blur(2px);
+      transition:background .2s ease, transform .15s ease;
+    }
+
+    #glory-rehab-expert-section .gre-yt-ctrl:hover{
+      background:rgba(18,18,18,.74);
+    }
+
+    #glory-rehab-expert-section .gre-yt-ctrl:active{
+      transform:scale(.92);
+    }
+
+    #glory-rehab-expert-section .gre-yt-ctrl svg{
+      width:3.1cqw;
+      height:3.1cqw;
+      min-width:14px;
+      min-height:14px;
+      flex:0 0 auto;
+      display:block;
+    }
+
+    #glory-rehab-expert-section .gre-yt-sound svg{
+      fill:var(--gre-gold);
+    }
+
+    #glory-rehab-expert-section .gre-yt-sound .gre-ic-on{
+      display:none;
+    }
+
+    #glory-rehab-expert-section .gre-yt-sound .gre-ic-muted{
+      display:block;
+    }
+
+    #glory-rehab-expert-section .gre-yt-sound:not(.is-muted) .gre-ic-on{
+      display:block;
+    }
+
+    #glory-rehab-expert-section .gre-yt-sound:not(.is-muted) .gre-ic-muted{
+      display:none;
+    }
+
+    /* =========================
+       오른쪽 카드 정렬 수정 영역
+       ========================= */
     #glory-rehab-expert-section .gre-right{
       position:relative;
-      flex:1 1 0;
+      min-width:0;
       display:flex;
       flex-direction:column;
+      align-items:center;
       justify-content:flex-start;
-      gap:4cqw;
-      min-width:0;
-      padding-right:0;
-      padding-top:1cqw;
+      padding:3.4cqw 2.4cqw 3.2cqw;
+      border-radius:.65cqw;
+      background:
+        linear-gradient(180deg,#ffffff 0%,#f8f8f7 100%);
+      box-shadow:
+        0 .5cqw 1.5cqw rgba(0,0,0,.22),
+        inset 0 0 0 .12cqw rgba(0,0,0,.06);
+      overflow:hidden;
     }
 
-    /* 맨 오른쪽 세로선 - 아래 문구까지 연결 */
-    #glory-rehab-expert-section .gre-right::after{
-      content:'';
+    #glory-rehab-expert-section .gre-right::before{
+      content:"";
       position:absolute;
-      top:0;
-      right:0;
-      bottom:0.2cqw;
-      width:0.34cqw;
-      background:var(--gre-line);
-      z-index:1;
+      inset:.45cqw;
+      border-radius:.45cqw;
+      border:.08cqw solid rgba(0,0,0,.04);
+      pointer-events:none;
     }
 
-    /* ===== POINTS ===== */
     #glory-rehab-expert-section .gre-points{
       position:relative;
-      z-index:2;
-      box-sizing:border-box;
+      z-index:1;
+      width:max-content;
+      max-width:100%;
       display:flex;
       flex-direction:column;
-      gap:3.6cqw;
-      padding-right:0;
-      border-right:0;
+      align-items:flex-start;
+      gap:2.05cqw;
+      margin:0 auto 2.2cqw;
     }
 
     #glory-rehab-expert-section .gre-point{
       display:flex;
-      flex-direction:column;
-      align-items:stretch;
-      gap:1cqw;
-    }
-
-    #glory-rehab-expert-section .gre-badge{
-      align-self:flex-end;
-      margin:0 8.8cqw 0 0;
-      padding:0.75cqw 1.8cqw 0.8cqw;
-      border-radius:999px;
-      background:linear-gradient(135deg, #ffd66a 0%, #ffc94f 45%, #f5ad25 100%);
-      color:#111;
-      font-size:1.7cqw;
-      font-weight:800;
-      letter-spacing:-0.01em;
-      line-height:1;
-    }
-
-    #glory-rehab-expert-section .gre-point-row{
-      display:grid;
-      grid-template-columns:minmax(0, 1fr) 4.4cqw;
       align-items:center;
+      justify-content:flex-start;
+      gap:1.55cqw;
       width:100%;
-      column-gap:0;
+      min-height:5.1cqw;
+      white-space:nowrap;
+    }
+
+    #glory-rehab-expert-section .gre-star{
+      flex:0 0 auto;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:4.5cqw;
+      height:4.5cqw;
+      font-size:4.4cqw;
+      line-height:1;
+      color:var(--gre-gold-2);
+      -webkit-text-stroke:.1cqw #9d6500;
+      text-shadow:
+        .18cqw .18cqw .05cqw rgba(0,0,0,.22),
+        0 0 .25cqw rgba(255,255,255,.75);
     }
 
     #glory-rehab-expert-section .gre-point-text{
-      font-family:'GMarketSans-400';
-      width:100%;
-      text-align:center;
-      position:relative;
-      font-size:4.55cqw;
-      font-weight:590;
-      color:#0a0b0a;
-      letter-spacing:-0.04em;
+      display:block;
+      font-size:3.28cqw;
+      font-weight:950;
+      color:#111;
+      letter-spacing:-0.055em;
+      line-height:1.15;
       white-space:nowrap;
-      line-height:1.08;
-      padding-left:1cqw;
-      padding-right:1cqw;
     }
 
-    #glory-rehab-expert-section .gre-tick{
-      justify-self:end;
-      width:4.4cqw;
-      height:0.25cqw;
+    #glory-rehab-expert-section .gre-divider{
+      position:relative;
+      z-index:1;
+      width:86%;
+      height:.16cqw;
+      margin:.25cqw auto 2.6cqw;
       background:var(--gre-line);
     }
 
-    /* ===== 1천건 강조점 : 살짝 위로 올림 ===== */
-    #glory-rehab-expert-section .gre-word-dots{
-      position:relative;
-      display:inline-block;
-    }
-
-    #glory-rehab-expert-section .gre-word-dots::before{
-      content:'';
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-      top:-1.9cqw;
-      width:0.95cqw;
-      height:0.95cqw;
-      border-radius:50%;
-      background:var(--gre-gold);
-      box-shadow:-2.8cqw 0 0 var(--gre-gold), 2.8cqw 0 0 var(--gre-gold);
-      pointer-events:none;
-    }
-
-    /* ===== 전문가 음절별 강조점 ===== */
-    #glory-rehab-expert-section .gre-syllable-dots{
-      display:inline-flex;
-      position:relative;
-      align-items:baseline;
-      color:#c78f15;
-      font-weight:800;
-    }
-
-    #glory-rehab-expert-section .gre-syllable-dots span{
-      position:relative;
-      display:inline-block;
-    }
-
-    #glory-rehab-expert-section .gre-syllable-dots span::before{
-      content:'';
-      position:absolute;
-      left:50%;
-      top:-1.45cqw;
-      transform:translateX(-50%);
-      width:0.95cqw;
-      height:0.95cqw;
-      border-radius:50%;
-      background:var(--gre-gold);
-      pointer-events:none;
-    }
-
-    /* ===== DIVIDER ===== */
-    #glory-rehab-expert-section .gre-divider{
-      position:relative;
-      z-index:2;
-      width:60%;
-      height:0.16cqw;
-      margin:0.4cqw auto 0;
-      background:#dedbd6;
-    }
-
-    /* ===== CREDS ===== */
     #glory-rehab-expert-section .gre-creds{
       position:relative;
-      z-index:2;
+      z-index:1;
+      width:100%;
       text-align:center;
-      padding-right:4.4cqw;
+      margin:0 auto 2.15cqw;
+      padding-left:0;
     }
 
     #glory-rehab-expert-section .gre-creds p{
       margin:0;
-      font-size:4.3cqw;
-      font-weight:500;
-      color:#222;
-      letter-spacing:-0.03em;
-      line-height:1.5;
+      font-size:3.52cqw;
+      font-weight:950;
+      color:#050505;
+      letter-spacing:-0.065em;
+      line-height:1.27;
+      word-break:keep-all;
+      white-space:nowrap;
+      text-align:center;
     }
 
-    /* ===== CLOSING ===== */
     #glory-rehab-expert-section .gre-closing{
       position:relative;
-      z-index:2;
+      z-index:1;
+      width:100%;
+      margin-top:auto;
       text-align:center;
-      margin-top:0.2cqw;
-      padding-right:4.4cqw;
+      padding-left:0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
     }
 
-    #glory-rehab-expert-section .gre-closing p{
+    #glory-rehab-expert-section .gre-closing-main{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      max-width:31.8cqw;
+      height:5.55cqw;
+      padding:0 .9cqw;
+      margin:0 auto 1.05cqw;
+      background:#050505;
+      color:#fff;
+      font-size:3.62cqw;
+      font-weight:950;
+      letter-spacing:-0.075em;
+      line-height:1;
+      white-space:nowrap;
+      box-shadow:.18cqw .18cqw 0 rgba(0,0,0,.18);
+      overflow:hidden;
+    }
+
+    #glory-rehab-expert-section .gre-closing-main b{
+      color:var(--gre-gold-2);
+      font-weight:950;
+    }
+
+    #glory-rehab-expert-section .gre-closing-sub{
+      width:100%;
       margin:0;
-      font-size:5.7cqw;
-      font-weight:800;
-      color:var(--gre-dark);
-      letter-spacing:-0.04em;
-      line-height:1.2;
+      font-size:3.45cqw;
+      font-weight:950;
+      color:#0a0a0a;
+      letter-spacing:-0.075em;
+      line-height:1.12;
+      white-space:nowrap;
+      text-align:center;
     }
 
-    #glory-rehab-expert-section .gre-closing p + p{
-      margin-top:.45cqw;
+    #glory-rehab-expert-section .gre-closing-sub b{
+      color:var(--gre-gold);
+      font-weight:950;
     }
 
-    #glory-rehab-expert-section .gre-closing .gre-gold-text{
-      color:#c78f15;
-      font-weight:800;
-    }
-
-    /* ===== ANIMATION ===== */
     #glory-rehab-expert-section.gre-js .gre-reveal{
       opacity:0;
       will-change:transform,opacity;
@@ -2082,6 +2168,58 @@ margin: 4cqw 2cqw 0;
       to{opacity:1;}
     }
 
+    @media (max-width:520px){
+      #glory-rehab-expert-section{
+        padding:2.6cqw 2.8cqw 2.8cqw;
+      }
+
+      #glory-rehab-expert-section .gre-title{
+        font-size:5.15cqw;
+      }
+
+      #glory-rehab-expert-section .gre-body{
+        gap:1.1cqw;
+      }
+
+      #glory-rehab-expert-section .gre-right{
+        padding:3.7cqw 2.1cqw 3.1cqw;
+      }
+
+      #glory-rehab-expert-section .gre-points{
+        gap:2.05cqw;
+      }
+
+      #glory-rehab-expert-section .gre-point{
+        gap:1.25cqw;
+      }
+
+      #glory-rehab-expert-section .gre-star{
+        width:4.4cqw;
+        height:4.4cqw;
+        font-size:4.3cqw;
+      }
+
+      #glory-rehab-expert-section .gre-point-text{
+        font-size:3.22cqw;
+      }
+
+      #glory-rehab-expert-section .gre-creds p{
+        font-size:3.43cqw;
+      }
+
+      #glory-rehab-expert-section .gre-closing-main{
+        max-width:32.4cqw;
+        height:5.45cqw;
+        font-size:3.48cqw;
+        padding:0 .75cqw;
+      }
+
+      #glory-rehab-expert-section .gre-closing-sub{
+        font-size:3.34cqw;
+        letter-spacing:-0.08em;
+      }
+    }
+
     @media (prefers-reduced-motion:reduce){
       #glory-rehab-expert-section.gre-js .gre-reveal{
         opacity:1;
@@ -2093,72 +2231,73 @@ margin: 4cqw 2cqw 0;
     }
   </style>
 
-  <div class="gre-head">
-    <h2 class="gre-head-1 gre-reveal gre-up" style="--d:.05s">다들 개인회생 전문이라던데</h2>
-    <h2 class="gre-head-2 gre-reveal gre-up" style="--d:.18s">회생전문이 맞나요?</h2>
+  <div class="gre-head gre-reveal gre-up" style="--d:.05s">
+    <h2 class="gre-title">
+      다들 개인회생 <span class="gre-gold">전문</span>이라던데,<br>
+      <span class="gre-gold">회생전문</span>이 맞나요?
+    </h2>
   </div>
 
   <div class="gre-body">
-    <div class="gre-card gre-naver-card gre-reveal gre-left" style="--d:.25s">
-      <div class="gre-naver-frame">
+    <div class="gre-card gre-yt-card gre-reveal gre-left" style="--d:.25s">
+      <div class="gre-yt-frame">
         <iframe
-          class="gre-naver-iframe"
+          class="gre-yt-iframe"
           width="393"
           height="699"
-          title="NAVER Clip"
+          title="YouTube Shorts"
           src="about:blank"
-          data-src="https://m.naver.com//shorts/?serviceType=NTV&mediaId=DCE053EA6AF904CF357ABBC72B7A66561CB9&recType=AiRS&panelType=sdk_ntv&entryPoint=https%3A%2F%2Ftv.naver.com&adUnitId=ntv_shortformviewer_web&viewerInfo=ntv_shortformviewer_web&embed=true&sdkTargetId=PLAYER-SDK-715943-316445&theme=light&viewMode=pc&oembed=true"
+          data-video-id="oHGP4IRyCpI"
           frameborder="0"
           loading="eager"
           allow="autoplay; fullscreen; encrypted-media; clipboard-write; web-share; picture-in-picture"
           allowfullscreen>
         </iframe>
+
+        <div class="gre-yt-block" aria-hidden="true"></div>
+
+        <div class="gre-yt-controls">
+          <button type="button" class="gre-yt-ctrl gre-yt-sound is-muted" aria-label="소리 켜기">
+            <svg class="gre-ic gre-ic-muted" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.25-3.9v2.07l2.2 2.2c.03-.12.05-.25.05-.37zm2.5 0c0 .94-.2 1.83-.54 2.64l1.51 1.51A8.94 8.94 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 0 0 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3z"/>
+            </svg>
+            <svg class="gre-ic gre-ic-on" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.25-3.9v7.79A4.5 4.5 0 0 0 16.5 12zM14 3.23v2.06a7.001 7.001 0 0 1 0 13.42v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
 
-    <div class="gre-right">
+    <div class="gre-right gre-reveal gre-rightin" style="--d:.35s">
       <div class="gre-points">
-        <div class="gre-point gre-reveal gre-rightin" style="--d:.35s">
-          <span class="gre-badge">Point 1</span>
-          <div class="gre-point-row">
-            <span class="gre-point-text">회생파산 7개팀</span>
-            <span class="gre-tick"></span>
-          </div>
+        <div class="gre-point">
+          <span class="gre-star">★</span>
+          <span class="gre-point-text">회생파산 7개팀</span>
         </div>
 
-        <div class="gre-point gre-reveal gre-rightin" style="--d:.48s">
-          <span class="gre-badge">Point 2</span>
-          <div class="gre-point-row">
-            <span class="gre-point-text">연간 <span class="gre-word-dots">1천건</span> 접수</span>
-            <span class="gre-tick"></span>
-          </div>
+        <div class="gre-point">
+          <span class="gre-star">★</span>
+          <span class="gre-point-text">연간 1천건 접수</span>
         </div>
 
-        <div class="gre-point gre-reveal gre-rightin" style="--d:.61s">
-          <span class="gre-badge">Point 3</span>
-          <div class="gre-point-row">
-            <span class="gre-point-text">자체부채팀 보유</span>
-            <span class="gre-tick"></span>
-          </div>
+        <div class="gre-point">
+          <span class="gre-star">★</span>
+          <span class="gre-point-text">자체부채팀 보유</span>
         </div>
       </div>
 
-      <div class="gre-divider gre-reveal gre-fade" style="--d:.72s"></div>
+      <div class="gre-divider"></div>
 
-      <div class="gre-creds gre-reveal gre-up" style="--d:.8s">
+      <div class="gre-creds">
         <p>법학대학원 석사</p>
         <p>공인 신용관리사</p>
         <p>서류발급대행사</p>
       </div>
 
-      <div class="gre-closing gre-reveal gre-up" style="--d:.92s">
-        <p>
-          진짜 
-          <span class="gre-syllable-dots gre-gold-text">
-            <span>전</span><span>문</span><span>가</span>
-          </span>로만
-        </p>
-        <p><span class="gre-gold-text">변호사-실무자</span> 구성</p>
+      <div class="gre-closing">
+        <div class="gre-closing-main">진짜<b>전문가</b>로만</div>
+        <p class="gre-closing-sub"><b>변호사-실무자</b> 구성</p>
       </div>
     </div>
   </div>
@@ -2170,80 +2309,169 @@ margin: 4cqw 2cqw 0;
 
       root.classList.add('gre-js');
 
-      var iframe = root.querySelector('.gre-naver-iframe');
+      var iframe = root.querySelector('.gre-yt-iframe');
+      var frame = root.querySelector('.gre-yt-frame');
+      var soundBtn = root.querySelector('.gre-yt-sound');
 
-      function buildNaverAutoplayUrl(){
-        if(!iframe) return '';
+      var videoId = iframe ? (iframe.getAttribute('data-video-id') || '') : '';
+      var ytPlayer = null;
 
-        var baseSrc = iframe.getAttribute('data-src') || iframe.getAttribute('src') || '';
-
-        try{
-          var url = new URL(baseSrc, window.location.href);
-
-          url.searchParams.set('embed', 'true');
-          url.searchParams.set('autoplay', '1');
-          url.searchParams.set('autoPlay', '1');
-          url.searchParams.set('autoplayMuted', '1');
-          url.searchParams.set('muted', '1');
-          url.searchParams.set('mute', '1');
-          url.searchParams.set('isMuted', '1');
-          url.searchParams.set('volume', '0');
-          url.searchParams.set('playsinline', '1');
-          url.searchParams.set('playsInline', '1');
-          url.searchParams.set('webkit-playsinline', '1');
-          url.searchParams.set('loop', '1');
-          url.searchParams.set('playlist', '0');
-          url.searchParams.set('recommend', '0');
-          url.searchParams.set('recType', 'none');
-
-          return url.toString();
-        }catch(e){
-          return baseSrc;
-        }
+      function revealVideo(){
+        if(frame) frame.classList.add('gre-yt-playing');
       }
 
-      function startNaverAutoplay(){
-        if(!iframe) return;
+      function buildYoutubeUrl(){
+        if(!videoId) return '';
 
-        var autoplaySrc = buildNaverAutoplayUrl();
+        var origin = '';
+        if(location.protocol === 'http:' || location.protocol === 'https:'){
+          origin = '&origin=' + encodeURIComponent(location.origin);
+        }
 
+        var params = [
+          'autoplay=1',
+          'mute=1',
+          'controls=0',
+          'playsinline=1',
+          'modestbranding=1',
+          'rel=0',
+          'fs=0',
+          'disablekb=1',
+          'iv_load_policy=3',
+          'enablejsapi=1'
+        ].join('&');
+
+        return 'https://www.youtube.com/embed/' + videoId + '?' + params + origin;
+      }
+
+      function resetSoundButton(){
+        if(!soundBtn) return;
+        soundBtn.classList.add('is-muted');
+        soundBtn.setAttribute('aria-label', '소리 켜기');
+      }
+
+      if(iframe && videoId){
+        iframe.id = iframe.id || 'gre-yt-player';
         iframe.setAttribute(
           'allow',
           'autoplay; fullscreen; encrypted-media; clipboard-write; web-share; picture-in-picture'
         );
-
         iframe.setAttribute('loading', 'eager');
+        if(iframe.getAttribute('src') !== buildYoutubeUrl()){
+          iframe.setAttribute('src', buildYoutubeUrl());
+        }
+        resetSoundButton();
+      }
 
-        if(iframe.getAttribute('src') !== autoplaySrc){
-          iframe.setAttribute('src', autoplaySrc);
+      function loadYouTubeAPI(cb){
+        if(window.YT && window.YT.Player){ cb(); return; }
+
+        window.__greYTCallbacks = window.__greYTCallbacks || [];
+        window.__greYTCallbacks.push(cb);
+
+        var prevReady = window.onYouTubeIframeAPIReady;
+        window.onYouTubeIframeAPIReady = function(){
+          if(typeof prevReady === 'function'){ try{ prevReady(); }catch(e){} }
+          var list = window.__greYTCallbacks || [];
+          window.__greYTCallbacks = [];
+          for(var i=0;i<list.length;i++){ try{ list[i](); }catch(e){} }
+        };
+
+        if(!document.getElementById('gre-yt-api-script')){
+          var s = document.createElement('script');
+          s.id = 'gre-yt-api-script';
+          s.src = 'https://www.youtube.com/iframe_api';
+          (document.head || document.body).appendChild(s);
         }
       }
 
-      startNaverAutoplay();
+      function initPlayer(){
+        if(!iframe || !videoId || !window.YT || !window.YT.Player) return;
 
-      window.addEventListener('pageshow', function(){
-        startNaverAutoplay();
-      });
+        ytPlayer = new YT.Player(iframe, {
+          events: {
+            onReady: function(e){
+              try{ e.target.mute(); e.target.playVideo(); }catch(err){}
+
+              var tries = 0;
+              var forceTimer = setInterval(function(){
+                tries++;
+                try{ e.target.mute(); e.target.playVideo(); }catch(err){}
+
+                var st = -1;
+                try{ st = e.target.getPlayerState(); }catch(err){}
+
+                if(st === YT.PlayerState.PLAYING || tries >= 15){
+                  clearInterval(forceTimer);
+                }
+              }, 350);
+
+              setTimeout(revealVideo, 1500);
+            },
+            onStateChange: function(e){
+              if(e.data === YT.PlayerState.PLAYING){
+                revealVideo();
+              }
+
+              if(e.data === YT.PlayerState.ENDED){
+                try{ e.target.seekTo(0, true); e.target.playVideo(); }catch(err){}
+              }
+            }
+          }
+        });
+      }
+
+      if(iframe && videoId){
+        loadYouTubeAPI(initPlayer);
+        setTimeout(revealVideo, 2500);
+      }
+
+      function ytCommand(func, args){
+        if(!iframe || !iframe.contentWindow) return;
+        try{
+          iframe.contentWindow.postMessage(JSON.stringify({
+            event: 'command', func: func, args: args || []
+          }), '*');
+        }catch(e){}
+      }
+
+      if(soundBtn){
+        soundBtn.addEventListener('click', function(){
+          var isMuted = soundBtn.classList.contains('is-muted');
+
+          if(isMuted){
+            if(ytPlayer && ytPlayer.unMute){
+              try{ ytPlayer.unMute(); ytPlayer.setVolume(100); ytPlayer.playVideo(); }catch(e){}
+            }else{
+              ytCommand('unMute'); ytCommand('setVolume', [100]); ytCommand('playVideo');
+            }
+            soundBtn.classList.remove('is-muted');
+            soundBtn.setAttribute('aria-label', '소리 끄기');
+          }else{
+            if(ytPlayer && ytPlayer.mute){
+              try{ ytPlayer.mute(); }catch(e){}
+            }else{
+              ytCommand('mute');
+            }
+            soundBtn.classList.add('is-muted');
+            soundBtn.setAttribute('aria-label', '소리 켜기');
+          }
+        });
+      }
+
+      function resumePlayback(){
+        if(ytPlayer && ytPlayer.playVideo){
+          try{ ytPlayer.playVideo(); }catch(e){}
+        }else{
+          ytCommand('playVideo');
+        }
+      }
+
+      window.addEventListener('pageshow', resumePlayback);
 
       document.addEventListener('visibilitychange', function(){
-        if(document.visibilityState === 'visible'){
-          startNaverAutoplay();
-        }
+        if(document.visibilityState === 'visible'){ resumePlayback(); }
       });
-
-      var frameWrap = root.querySelector('.gre-naver-frame');
-
-      if(frameWrap){
-        frameWrap.addEventListener('wheel', function(e){
-          e.stopPropagation();
-
-          window.scrollBy({
-            top:e.deltaY,
-            left:0,
-            behavior:'auto'
-          });
-        }, {passive:true});
-      }
 
       var items = root.querySelectorAll('.gre-reveal');
 
