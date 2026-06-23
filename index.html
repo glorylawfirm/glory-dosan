@@ -98,6 +98,29 @@
 
 @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
 
+@font-face {
+    font-family: 'PyeojinGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2504-1@1.0/PyeojinGothic-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PyeojinGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2504-1@1.0/PyeojinGothic-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PyeojinGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2504-1@1.0/PyeojinGothic-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+
+
 body {
   margin: 0;
   padding: 0;
@@ -700,6 +723,7 @@ margin: 4cqw 2cqw 0;
   display:flex;
   align-items:center;
   gap:0;
+  margin-bottom: 30px;
 }
 #glory-faq-experts .gfe-item--right{ justify-content:flex-end; }
 #glory-faq-experts .gfe-item--left{ justify-content:flex-start; }
@@ -739,7 +763,7 @@ margin: 4cqw 2cqw 0;
 }
 #glory-faq-experts .gfe-qtext{
   font-family: 'Noto Sans KR';
-  font-size:5cqw;
+  font-size:4.8cqw;
   font-weight:570;
   color:#0d0e0d;
   line-height:1.25;
@@ -753,11 +777,11 @@ margin: 4cqw 2cqw 0;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.36);
 }
 #glory-faq-experts .gfe-bubble p{
-  font-family: 'GMarketSans-400';
+    font-family: 'PyeojinGothic';
   margin:0;
   font-size:3.7cqw;
   line-height:1.8;
-  /* font-weight:600; */
+  font-weight:600;
   color:#101010;
   letter-spacing:-0.01em;
 }
@@ -801,14 +825,14 @@ margin: 4cqw 2cqw 0;
   box-shadow:0 0.6cqw 1.6cqw rgba(0,0,0,0.18);
 }
 #glory-faq-experts .gfe-badge-label{
-  font-size:2.05cqw;
+  font-size:2.4cqw;
   font-weight:800;
   color:#ffffff;
   letter-spacing:-0.01em;
 }
 #glory-faq-experts .gfe-badge-name{
   font-family:'Nanum Pen Script','Pretendard',cursive;
-  font-size:2.7cqw;
+  font-size:3.3cqw;
   font-weight:400;
   color:#f2f2f2;
 }
