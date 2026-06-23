@@ -723,7 +723,7 @@ margin: 4cqw 2cqw 0;
   display:flex;
   align-items:center;
   gap:0;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 #glory-faq-experts .gfe-item--right{ justify-content:flex-end; }
 #glory-faq-experts .gfe-item--left{ justify-content:flex-start; }
@@ -746,7 +746,7 @@ margin: 4cqw 2cqw 0;
   display:flex;
   align-items:baseline;
   gap:1.4cqw;
-  margin:0 0 1.9cqw;
+  margin:0 0 3cqw;
 }
 #glory-faq-experts .gfe-num{
   font-size:6cqw;
@@ -1059,9 +1059,8 @@ margin: 4cqw 2cqw 0;
     #glory-case-slider .gcs-headline .l1,
     #glory-case-slider .gcs-headline .l2{
       margin:0;
-      font-family:'GMarketSans-500';
+      font-family:'GMarketSans-500','Pretendard','Noto Sans KR','Apple SD Gothic Neo',sans-serif;
       font-size:6.3cqw;
-      /* font-weight:900; */
       letter-spacing:-0.075em;
       line-height:1.4;
       word-break:keep-all;
@@ -1084,6 +1083,37 @@ margin: 4cqw 2cqw 0;
     #glory-case-slider .gcs-headline .black{
       color:#050505;
       font-weight:900;
+    }
+
+    /* ===== 제목 별 아이콘 자동 비율 조정 ===== */
+    #glory-case-slider .gcs-title-row{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.42em;
+      max-width:100%;
+      white-space:nowrap;
+      line-height:1;
+      vertical-align:middle;
+    }
+
+    #glory-case-slider .gcs-title-text{
+      display:inline-block;
+      line-height:1.15;
+    }
+
+    #glory-case-slider .gcs-star-icon{
+      flex:0 0 auto;
+      display:block;
+      width:.72em;
+      height:.72em;
+      min-width:18px;
+      min-height:18px;
+      max-width:42px;
+      max-height:42px;
+      object-fit:contain;
+      object-position:center;
+      transform:translateY(-.02em);
     }
 
     /* ===== SLIDER ===== */
@@ -1132,7 +1162,7 @@ margin: 4cqw 2cqw 0;
     }
 
     #glory-case-slider .gcs-card-title{
-      font-family:'GMarketSans-400';
+      font-family:'GMarketSans-400','Pretendard','Noto Sans KR','Apple SD Gothic Neo',sans-serif;
       font-size:5.6cqw;
       font-weight:450;
       color:var(--gcs-ink);
@@ -1147,7 +1177,7 @@ margin: 4cqw 2cqw 0;
     }
 
     #glory-case-slider .gcs-card-desc{
-      font-family:'GMarketSans-400';
+      font-family:'GMarketSans-400','Pretendard','Noto Sans KR','Apple SD Gothic Neo',sans-serif;
       font-size:5cqw;
       line-height:1.45;
       color:#373737;
@@ -1237,7 +1267,6 @@ margin: 4cqw 2cqw 0;
       overflow:visible;
       margin-left:-3cqw;
       margin-top:3cqw;
-
       background-image:var(--stamp-img);
       background-size:contain;
       background-repeat:no-repeat;
@@ -1368,6 +1397,21 @@ margin: 4cqw 2cqw 0;
       animation:gcsStamp .6s cubic-bezier(.2,.7,.3,1.25) forwards;
     }
 
+    @media (max-width:520px){
+      #glory-case-slider .gcs-title-row{
+        gap:.36em;
+      }
+
+      #glory-case-slider .gcs-star-icon{
+        width:.9em;
+        height:.9em;
+        min-width:16px;
+        min-height:16px;
+        max-width:34px;
+        max-height:34px;
+      }
+    }
+
     @media (prefers-reduced-motion:reduce){
       #glory-case-slider.gcs-js [data-gcs-anim]{
         opacity:1!important;
@@ -1399,7 +1443,13 @@ margin: 4cqw 2cqw 0;
         <div class="gcs-slide">
           <div class="gcs-headline">
             <p class="l1">부양 가족 인정으로</p>
-            <p class="l2"><img src="./img/star.png" style="width:100%;max-width:30px;"> 생계비 확보 사례 <img src="./img/star.png" style="width:100%;max-width:30px;"> </p>
+            <p class="l2">
+              <span class="gcs-title-row">
+                <img class="gcs-star-icon" src="./img/star.png" alt="">
+                <span class="gcs-title-text">생계비 확보 사례</span>
+                <img class="gcs-star-icon" src="./img/star.png" alt="">
+              </span>
+            </p>
           </div>
 
           <div class="gcs-card">
@@ -1434,7 +1484,13 @@ margin: 4cqw 2cqw 0;
         <div class="gcs-slide">
           <div class="gcs-headline">
             <p class="l1">전세사기 24개월</p>
-            <p class="l2"><img src="./img/star.png" style="width:100%;max-width:30px;"> 변제기간 인정사례 <img src="./img/star.png" style="width:100%;max-width:30px;"></p>
+            <p class="l2">
+              <span class="gcs-title-row">
+                <img class="gcs-star-icon" src="./img/star.png" alt="">
+                <span class="gcs-title-text">변제기간 인정사례</span>
+                <img class="gcs-star-icon" src="./img/star.png" alt="">
+              </span>
+            </p>
           </div>
 
           <div class="gcs-card">
@@ -1469,7 +1525,13 @@ margin: 4cqw 2cqw 0;
         <div class="gcs-slide">
           <div class="gcs-headline">
             <p class="l1">투자손실금 소명으로</p>
-            <p class="l2"><img src="./img/star.png" style="width:100%;max-width:30px;"> 높은 탕감률 사례 <img src="./img/star.png" style="width:100%;max-width:30px;"> </p>
+            <p class="l2">
+              <span class="gcs-title-row">
+                <img class="gcs-star-icon" src="./img/star.png" alt="">
+                <span class="gcs-title-text">높은 탕감률 사례</span>
+                <img class="gcs-star-icon" src="./img/star.png" alt="">
+              </span>
+            </p>
           </div>
 
           <div class="gcs-card">
