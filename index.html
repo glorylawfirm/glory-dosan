@@ -671,7 +671,6 @@ margin: 4cqw 2cqw 0;
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
-
 #glory-faq-experts{
   --gfe-gold:#c4a047;
   --gfe-ink:#2b2b2b;
@@ -681,15 +680,18 @@ margin: 4cqw 2cqw 0;
   display:flex;
   justify-content:center;
   width:100%;
-  max-width: 840px;
-  margin: auto;
+  max-width:840px;
+  margin:auto;
   font-family:'Pretendard','Noto Sans KR','Apple SD Gothic Neo',sans-serif;
   background:
     repeating-linear-gradient(135deg, rgba(140,140,140,0.035) 0 1px, transparent 1px 30px),
     linear-gradient(180deg,#f6f6f3 0%,#fbfbf9 100%);
   position:relative;
 }
-#glory-faq-experts *{box-sizing:border-box;}
+
+#glory-faq-experts *{
+  box-sizing:border-box;
+}
 
 #glory-faq-experts .gfe-inner{
   container-type:inline-size;
@@ -708,12 +710,26 @@ margin: 4cqw 2cqw 0;
   overflow:hidden;
   pointer-events:none;
 }
+
+/* 배경을 더 진하게 만드는 오버레이 */
+#glory-faq-experts .gfe-bg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:rgba(0,0,0,0.10); /* 숫자를 올리면 더 진해짐 */
+  pointer-events:none;
+}
+
 #glory-faq-experts .gfe-bg img{
   width:100%;
   height:100%;
   object-fit:cover;
   object-position:center;
   display:block;
+
+  /* 배경 진하기 조절 */
+  filter:brightness(0.99);
 }
 
 /* ===== ITEM ROW ===== */
@@ -723,18 +739,45 @@ margin: 4cqw 2cqw 0;
   display:flex;
   align-items:center;
   gap:0;
-  margin-bottom: 50px;
+  margin-bottom:50px;
 }
-#glory-faq-experts .gfe-item--right{ justify-content:flex-end; }
-#glory-faq-experts .gfe-item--left{ justify-content:flex-start; }
-#glory-faq-experts .gfe-item--right .gfe-person{ margin-left:-12cqw; }
-#glory-faq-experts .gfe-item--left .gfe-person{ margin-right:-12cqw; }
-/* 말풍선 끝을 사진 뒤(가운데)까지 연장 — 글자는 가려지지 않도록 사진 쪽 여백만 확장 */
-#glory-faq-experts .gfe-item--right .gfe-bubble{ padding-right:13cqw; }
-#glory-faq-experts .gfe-item--left .gfe-bubble{ padding-left:16cqw; }
-#glory-faq-experts .gfe-item--left .gfe-q{ margin-left:13cqw; }
-#glory-faq-experts .gfe-item--right .gfe-q{ margin-right:13cqw; }
-#glory-faq-experts .gfe-item + .gfe-item{ margin-top:7cqw; }
+
+#glory-faq-experts .gfe-item--right{
+  justify-content:flex-end;
+}
+
+#glory-faq-experts .gfe-item--left{
+  justify-content:flex-start;
+}
+
+#glory-faq-experts .gfe-item--right .gfe-person{
+  margin-left:-12cqw;
+}
+
+#glory-faq-experts .gfe-item--left .gfe-person{
+  margin-right:-12cqw;
+}
+
+/* 말풍선 끝을 사진 뒤까지 연장 */
+#glory-faq-experts .gfe-item--right .gfe-bubble{
+  padding-right:13cqw;
+}
+
+#glory-faq-experts .gfe-item--left .gfe-bubble{
+  padding-left:16cqw;
+}
+
+#glory-faq-experts .gfe-item--left .gfe-q{
+  margin-left:13cqw;
+}
+
+#glory-faq-experts .gfe-item--right .gfe-q{
+  margin-right:13cqw;
+}
+
+#glory-faq-experts .gfe-item + .gfe-item{
+  margin-top:7cqw;
+}
 
 /* ===== TEXT COLUMN ===== */
 #glory-faq-experts .gfe-text{
@@ -742,49 +785,53 @@ margin: 4cqw 2cqw 0;
   min-width:0;
   max-width:90cqw;
 }
+
 #glory-faq-experts .gfe-q{
   display:flex;
   align-items:baseline;
   gap:1.4cqw;
   margin:0 0 3cqw;
 }
+
 #glory-faq-experts .gfe-num{
   font-size:6cqw;
   font-weight:800;
   line-height:1;
   flex:0 0 auto;
-
-  /* 텍스트 그라데이션 */
-  background: #e4b329;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  background:#e4b329;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:transparent;
 }
+
 #glory-faq-experts .gfe-qtext{
-  font-family: 'Noto Sans KR';
+  font-family:'Noto Sans KR';
   font-size:4.8cqw;
   font-weight:570;
   color:#0d0e0d;
   line-height:1.25;
   letter-spacing:-0.02em;
 }
+
 #glory-faq-experts .gfe-bubble{
   background:linear-gradient(135deg,#fff 0%,#f9f8f6 55%,#f4f2ef 100%);
   border:0.1cqw solid #eeeee8;
   border-radius:1.8cqw;
   padding:2.7cqw 3.2cqw;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.36);
+  box-shadow:2px 2px 2px rgba(0,0,0,0.36);
 }
+
 #glory-faq-experts .gfe-bubble p{
-    font-family: 'PyeojinGothic';
+  font-family:'PyeojinGothic';
   margin:0;
-    font-size: 4.1cqw;
-    line-height: 1.6;
+  font-size:4.1cqw;
+  line-height:1.6;
   font-weight:600;
   color:#101010;
   letter-spacing:-0.01em;
 }
+
 #glory-faq-experts .gfe-gold{
   color:#ecb229;
   font-weight:800;
@@ -799,20 +846,22 @@ margin: 4cqw 2cqw 0;
   align-items:center;
   flex:0 0 auto;
 }
+
 #glory-faq-experts .gfe-photo{
   width:26cqw;
   aspect-ratio:1 / 1;
   border-radius:50%;
   overflow:hidden;
-  /* border:0.3cqw solid #ffffff; */
   box-shadow:0 1cqw 2.6cqw rgba(0,0,0,0.12);
 }
+
 #glory-faq-experts .gfe-photo img{
   width:100%;
   height:100%;
   object-fit:cover;
   display:block;
 }
+
 #glory-faq-experts .gfe-badge{
   display:inline-flex;
   align-items:baseline;
@@ -820,16 +869,17 @@ margin: 4cqw 2cqw 0;
   margin-top:-2.5cqw;
   padding:0.8cqw 3.1cqw;
   background:var(--gfe-badge);
-  /* border-radius:1.6cqw; */
   white-space:nowrap;
   box-shadow:0 0.6cqw 1.6cqw rgba(0,0,0,0.18);
 }
+
 #glory-faq-experts .gfe-badge-label{
   font-size:2.4cqw;
   font-weight:800;
   color:#ffffff;
   letter-spacing:-0.01em;
 }
+
 #glory-faq-experts .gfe-badge-name{
   font-family:'Nanum Pen Script','Pretendard',cursive;
   font-size:3.3cqw;
@@ -838,19 +888,70 @@ margin: 4cqw 2cqw 0;
 }
 
 /* ===== FADE ANIMATIONS ===== */
-@keyframes gfeFadeIn{from{opacity:0;}to{opacity:1;}}
-@keyframes gfeFadeInUp{from{opacity:0;transform:translateY(34px);}to{opacity:1;transform:translateY(0);}}
-@keyframes gfeFadeInLeft{from{opacity:0;transform:translateX(-46px);}to{opacity:1;transform:translateX(0);}}
-@keyframes gfeFadeInRight{from{opacity:0;transform:translateX(46px);}to{opacity:1;transform:translateX(0);}}
+@keyframes gfeFadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
 
-#glory-faq-experts.gfe-js [data-gfe-anim]{opacity:0;will-change:opacity,transform;}
-#glory-faq-experts.gfe-js [data-gfe-anim="in"].gfe-show{animation:gfeFadeIn .8s ease forwards;}
-#glory-faq-experts.gfe-js [data-gfe-anim="up"].gfe-show{animation:gfeFadeInUp .85s cubic-bezier(.22,.61,.36,1) forwards;}
-#glory-faq-experts.gfe-js [data-gfe-anim="left"].gfe-show{animation:gfeFadeInLeft .85s cubic-bezier(.22,.61,.36,1) forwards;}
-#glory-faq-experts.gfe-js [data-gfe-anim="right"].gfe-show{animation:gfeFadeInRight .85s cubic-bezier(.22,.61,.36,1) forwards;}
+@keyframes gfeFadeInUp{
+  from{
+    opacity:0;
+    transform:translateY(34px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes gfeFadeInLeft{
+  from{
+    opacity:0;
+    transform:translateX(-46px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+@keyframes gfeFadeInRight{
+  from{
+    opacity:0;
+    transform:translateX(46px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+#glory-faq-experts.gfe-js [data-gfe-anim]{
+  opacity:0;
+  will-change:opacity,transform;
+}
+
+#glory-faq-experts.gfe-js [data-gfe-anim="in"].gfe-show{
+  animation:gfeFadeIn .8s ease forwards;
+}
+
+#glory-faq-experts.gfe-js [data-gfe-anim="up"].gfe-show{
+  animation:gfeFadeInUp .85s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+#glory-faq-experts.gfe-js [data-gfe-anim="left"].gfe-show{
+  animation:gfeFadeInLeft .85s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+#glory-faq-experts.gfe-js [data-gfe-anim="right"].gfe-show{
+  animation:gfeFadeInRight .85s cubic-bezier(.22,.61,.36,1) forwards;
+}
 
 @media (prefers-reduced-motion:reduce){
-  #glory-faq-experts.gfe-js [data-gfe-anim]{opacity:1!important;animation:none!important;}
+  #glory-faq-experts.gfe-js [data-gfe-anim]{
+    opacity:1!important;
+    animation:none!important;
+  }
 }
 </style>
 
@@ -873,9 +974,11 @@ margin: 4cqw 2cqw 0;
           <span class="gfe-gold">최대 10% 이하 수준</span>으로 줄일 수 있습니다.</p>
         </div>
       </div>
+
       <div class="gfe-person" data-gfe-anim="right" style="animation-delay:.1s">
-        <!-- 인물 사진 : src 경로만 교체 -->
-        <div class="gfe-photo"><img src="./img/staff1.jpg" alt="김창순 국장"></div>
+        <div class="gfe-photo">
+          <img src="./img/staff1.jpg" alt="김창순 국장">
+        </div>
         <div class="gfe-badge">
           <span class="gfe-badge-label">경력 20년</span>
           <span class="gfe-badge-name">김창순 국장</span>
@@ -886,12 +989,15 @@ margin: 4cqw 2cqw 0;
     <!-- ===== 02 (사진 왼쪽) ===== -->
     <div class="gfe-item gfe-item--left">
       <div class="gfe-person" data-gfe-anim="left" style="animation-delay:.1s">
-        <div class="gfe-photo"><img src="./img/staff2.jpg" alt="이인표 팀장"></div>
+        <div class="gfe-photo">
+          <img src="./img/staff2.jpg" alt="이인표 팀장">
+        </div>
         <div class="gfe-badge">
           <span class="gfe-badge-label">신용관리사</span>
           <span class="gfe-badge-name">이인표 팀장</span>
         </div>
       </div>
+
       <div class="gfe-text">
         <h3 class="gfe-q" data-gfe-anim="right">
           <span class="gfe-num">02</span>
@@ -916,8 +1022,11 @@ margin: 4cqw 2cqw 0;
           <span class="gfe-gold">연체독촉에서 즉시 해방</span>시켜드립니다.</p>
         </div>
       </div>
+
       <div class="gfe-person" data-gfe-anim="right" style="animation-delay:.1s">
-        <div class="gfe-photo"><img src="./img/staff3.jpg" alt="심진영 팀장"></div>
+        <div class="gfe-photo">
+          <img src="./img/staff3.jpg" alt="심진영 팀장">
+        </div>
         <div class="gfe-badge">
           <span class="gfe-badge-label">신용평가사</span>
           <span class="gfe-badge-name">심진영 팀장</span>
@@ -928,12 +1037,15 @@ margin: 4cqw 2cqw 0;
     <!-- ===== 04 (사진 왼쪽) ===== -->
     <div class="gfe-item gfe-item--left">
       <div class="gfe-person" data-gfe-anim="left" style="animation-delay:.1s">
-        <div class="gfe-photo"><img src="./img/staff4.jpg" alt="이인표 팀장"></div>
+        <div class="gfe-photo">
+          <img src="./img/staff4.jpg" alt="이인표 팀장">
+        </div>
         <div class="gfe-badge">
           <span class="gfe-badge-label">신용관리사</span>
           <span class="gfe-badge-name">이인표 팀장</span>
         </div>
       </div>
+
       <div class="gfe-text">
         <h3 class="gfe-q" data-gfe-anim="right">
           <span class="gfe-num">04</span>
@@ -948,17 +1060,22 @@ margin: 4cqw 2cqw 0;
 
   </div>
 
-
 <script>
 (function(){
   var sec = document.getElementById('glory-faq-experts');
   if(!sec) return;
+
   sec.classList.add('gfe-js');
+
   var items = sec.querySelectorAll('[data-gfe-anim]');
+
   if(!('IntersectionObserver' in window)){
-    items.forEach(function(el){ el.classList.add('gfe-show'); });
+    items.forEach(function(el){
+      el.classList.add('gfe-show');
+    });
     return;
   }
+
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
@@ -966,8 +1083,14 @@ margin: 4cqw 2cqw 0;
         io.unobserve(e.target);
       }
     });
-  },{ threshold:0.2, rootMargin:'0px 0px -8% 0px' });
-  items.forEach(function(el){ io.observe(el); });
+  }, {
+    threshold:0.2,
+    rootMargin:'0px 0px -8% 0px'
+  });
+
+  items.forEach(function(el){
+    io.observe(el);
+  });
 })();
 </script>
 
